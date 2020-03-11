@@ -1,0 +1,323 @@
+.flag-background {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: contain;
+}
+.flag {
+  font-size: 0;
+  position: relative;
+  display: inline-block;
+  width: 26px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  box-shadow: 0 0 1px 1px #cfcfcf;
+  margin-right: 5px;
+  background-size: cover;
+}
+.flag:before {
+  content: '\00a0';
+}
+.flag-1x {
+  line-height: 1em;
+  width: 1.33333333em;
+}
+.flag-2x {
+  line-height: 2em;
+  width: 2.66666667em;
+}
+.flag-3x {
+  line-height: 3em;
+  width: 4em;
+}
+.flag-4x {
+  line-height: 4em;
+  width: 5.33333333em;
+}
+.flag-5x {
+  line-height: 5em;
+  width: 6.66666667em;
+}
+.flag-6x {
+  line-height: 6em;
+  width: 8em;
+}
+.flag-7x {
+  line-height: 7em;
+  width: 9.33333333em;
+}
+.flag-8x {
+  line-height: 8em;
+  width: 10.66666667em;
+}
+.flag-9x {
+  line-height: 9em;
+  width: 12em;
+}
+.flag-10x {
+  line-height: 10em;
+  width: 13.33333333em;
+}
+.flag-rotate-90 {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.flag-rotate-180 {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.flag-rotate-270 {
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.flag-flip-horizontal {
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+}
+.flag-flip-vertical {
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+}
+:root .flag-rotate-90,
+:root .flag-rotate-180,
+:root .flag-rotate-270,
+:root .flag-flip-horizontal,
+:root .flag-flip-vertical {
+  filter: none;
+}
+.flag-aus,
+.flag-au,
+.flag-36,
+.flag-ioc-aus,
+.flag-fifa-aus {
+  background-image: url(/mp-widget/img/flags/png/aus.png);
+  background-image: url(/mp-widget/img/flags/aus.svg);
+}
+.flag-bel,
+.flag-be,
+.flag-56,
+.flag-ioc-bel,
+.flag-fifa-bel {
+  background-image: url(/mp-widget/img/flags/png/bel.png);
+  background-image: url(/mp-widget/img/flags/bel.svg);
+}
+.flag-blr,
+.flag-by,
+.flag-112,
+.flag-ioc-blr,
+.flag-fifa-blr {
+  background-image: url(/mp-widget/img/flags/png/blr.png);
+  background-image: url(/mp-widget/img/flags/blr.svg);
+  background-size: cover;
+  background-position: 0;
+}
+.flag-bra,
+.flag-br,
+.flag-76,
+.flag-ioc-bra,
+.flag-fifa-bra {
+  background-image: url(/mp-widget/img/flags/png/bra.png);
+  background-image: url(/mp-widget/img/flags/bra.svg);
+}
+.flag-che,
+.flag-ch,
+.flag-756,
+.flag-ioc-sui,
+.flag-fifa-sui {
+  background-image: url(/mp-widget/img/flags/png/che.png);
+  background-image: url(/mp-widget/img/flags/che.svg);
+  background-size: contain;
+  width: 16px;
+}
+.flag-cyp,
+.flag-cy,
+.flag-196,
+.flag-ioc-cyp,
+.flag-fifa-cyp {
+  background-image: url(/mp-widget/img/flags/png/cyp.png);
+  background-image: url(/mp-widget/img/flags/cyp.svg);
+}
+.flag-cze,
+.flag-cz,
+.flag-203,
+.flag-ioc-cze,
+.flag-fifa-cze {
+  background-image: url(/mp-widget/img/flags/png/cze.png);
+  background-image: url(/mp-widget/img/flags/cze.svg);
+}
+.flag-deu,
+.flag-de,
+.flag-276,
+.flag-ioc-ger,
+.flag-fifa-ger {
+  background-image: url(/mp-widget/img/flags/png/deu.png);
+  background-image: url(/mp-widget/img/flags/deu.svg);
+}
+.flag-esp,
+.flag-es,
+.flag-724,
+.flag-ioc-esp,
+.flag-fifa-esp {
+  background-image: url(/mp-widget/img/flags/png/esp.png);
+  background-image: url(/mp-widget/img/flags/esp.svg);
+}
+.flag-est,
+.flag-ee,
+.flag-233,
+.flag-ioc-est,
+.flag-fifa-est {
+  background-image: url(/mp-widget/img/flags/png/est.png);
+  background-image: url(/mp-widget/img/flags/est.svg);
+}
+.flag-fin,
+.flag-fi,
+.flag-246,
+.flag-ioc-fin,
+.flag-fifa-fin {
+  background-image: url(/mp-widget/img/flags/png/fin.png);
+  background-image: url(/mp-widget/img/flags/fin.svg);
+}
+.flag-fra,
+.flag-fr,
+.flag-250,
+.flag-ioc-fra,
+.flag-fifa-fra {
+  background-image: url(/mp-widget/img/flags/png/fra.png);
+  background-image: url(/mp-widget/img/flags/fra.svg);
+}
+.flag-gbr,
+.flag-gb,
+.flag-826,
+.flag-ioc-gbr {
+  background-image: url(/mp-widget/img/flags/png/gbr.png);
+  background-image: url(/mp-widget/img/flags/gbr.svg);
+}
+.flag-idn,
+.flag-id,
+.flag-360,
+.flag-ioc-ina,
+.flag-fifa-idn {
+  background-image: url(/mp-widget/img/flags/png/idn.png);
+  background-image: url(/mp-widget/img/flags/idn.svg);
+}
+.flag-ind,
+.flag-in,
+.flag-356,
+.flag-ioc-ind,
+.flag-fifa-ind {
+  background-image: url(/mp-widget/img/flags/png/ind.png);
+  background-image: url(/mp-widget/img/flags/ind.svg);
+}
+.flag-isr,
+.flag-il,
+.flag-376,
+.flag-ioc-isr,
+.flag-fifa-isr {
+  background-image: url(/mp-widget/img/flags/png/isr.png);
+  background-image: url(/mp-widget/img/flags/isr.svg);
+}
+.flag-ita,
+.flag-it,
+.flag-380,
+.flag-ioc-ita,
+.flag-fifa-ita {
+  background-image: url(/mp-widget/img/flags/png/ita.png);
+  background-image: url(/mp-widget/img/flags/ita.svg);
+}
+.flag-jpn,
+.flag-jp,
+.flag-392,
+.flag-ioc-jpn,
+.flag-fifa-jpn {
+  background-image: url(/mp-widget/img/flags/png/jpn.png);
+  background-image: url(/mp-widget/img/flags/jpn.svg);
+}
+.flag-kaz,
+.flag-kz,
+.flag-398,
+.flag-ioc-kaz,
+.flag-fifa-kaz {
+  background-image: url(/mp-widget/img/flags/png/kaz.png);
+  background-image: url(/mp-widget/img/flags/kaz.svg);
+}
+.flag-mex,
+.flag-mx,
+.flag-484,
+.flag-ioc-mex,
+.flag-fifa-mex {
+  background-image: url(/mp-widget/img/flags/png/mex.png);
+  background-image: url(/mp-widget/img/flags/mex.svg);
+}
+.flag-nld,
+.flag-nl,
+.flag-528,
+.flag-ioc-ned,
+.flag-fifa-ned {
+  background-image: url(/mp-widget/img/flags/png/nld.png);
+  background-image: url(/mp-widget/img/flags/nld.svg);
+}
+.flag-pol,
+.flag-pl,
+.flag-616,
+.flag-ioc-pol,
+.flag-fifa-pol {
+  background-image: url(/mp-widget/img/flags/png/pol.png);
+  background-image: url(/mp-widget/img/flags/pol.svg);
+}
+.flag-py,
+.flag-600,
+.flag-ioc-par,
+.flag-fifa-par {
+  background-image: url(/mp-widget/img/flags/png/pry.png);
+  background-image: url(/mp-widget/img/flags/pry.svg);
+}
+.flag-rus,
+.flag-ru,
+.flag-643,
+.flag-ioc-rus,
+.flag-fifa-rus {
+  background-image: url(/mp-widget/img/flags/png/rus.png);
+  background-image: url(/mp-widget/img/flags/rus.svg);
+}
+.flag-sau,
+.flag-sa,
+.flag-682,
+.flag-ioc-ksa,
+.flag-fifa-ksa {
+  background-image: url(/mp-widget/img/flags/png/sau.png);
+  background-image: url(/mp-widget/img/flags/sau.svg);
+}
+.flag-sgp,
+.flag-sg,
+.flag-702,
+.flag-ioc-sin,
+.flag-fifa-sin {
+  background-image: url(/mp-widget/img/flags/png/sgp.png);
+  background-image: url(/mp-widget/img/flags/sgp.svg);
+}
+.flag-swe,
+.flag-se,
+.flag-752,
+.flag-ioc-swe,
+.flag-fifa-swe {
+  background-image: url(/mp-widget/img/flags/png/swe.png);
+  background-image: url(/mp-widget/img/flags/swe.svg);
+}
+.flag-usa,
+.flag-us,
+.flag-840,
+.flag-ioc-usa,
+.flag-fifa-usa {
+  background-image: url(/mp-widget/img/flags/png/usa.png);
+  background-image: url(/mp-widget/img/flags/usa.svg);
+}
