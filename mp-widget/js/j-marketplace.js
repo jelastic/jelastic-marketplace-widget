@@ -5107,7 +5107,6 @@ jQuery(document).ready(function($) {
                     JApp.setFilter(client_apps_obj);
                 }
             }
-            console.log(JApp.getFilter());
             window.hoster = false;
             if ($(marketplace).data("key")) window.hoster = $(marketplace).data("key");
             sHtml = new EJS({
