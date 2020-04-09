@@ -30,6 +30,21 @@ jQuery(document).ready(function ($) {
             JApp.setAPI(API);
 
 
+            var client_apps = $(marketplace).data('apps');
+            if (client_apps) {
+                var client_apps_obj = {};
+                client_apps = client_apps.split(',').map(function(item) {
+                    return item.trim();
+                });
+                client_apps_obj['app_id'] = client_apps;
+                client_apps_obj = JSON.stringify(client_apps_obj);
+                if (client_apps_obj) {
+                    JApp.setFilter(client_apps_obj);
+                } 
+            }
+            
+            console.log(JApp.getFilter());
+
             window.hoster = false;
             if ($(marketplace).data('key')) window.hoster = $(marketplace).data('key');
 

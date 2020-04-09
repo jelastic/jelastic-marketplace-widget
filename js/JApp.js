@@ -21,7 +21,7 @@ window.JApp = (function (that) {
                 "apps": "All",
             },
             "lang": "en",
-            "filter": ""
+            "filter": ''
         },
         sHref = window.location.href;
 
@@ -42,6 +42,10 @@ window.JApp = (function (that) {
 
     that.getFilter = function () {
         return oLocale.filter;
+    }
+
+    that.setFilter = function (sData) {
+        return oLocale.filter = sData;
     }
 
     that.getLang = function () {
