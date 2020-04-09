@@ -74,6 +74,14 @@ input {
 .clr {
   clear: both;
 }
+.without-menu .marketplace-offers {
+  padding-top: 50px;
+}
+@media (max-width: 992px) {
+  .without-menu .marketplace-offers {
+    padding-top: 35px;
+  }
+}
 .marketplace {
   background: #ffffff;
   position: relative;

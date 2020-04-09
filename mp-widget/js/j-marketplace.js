@@ -5095,6 +5095,14 @@ jQuery(document).ready(function($) {
             var API = "//marketplace.jelastic.com/";
             if ($(marketplace).data("mpapi")) API = $(marketplace).data("mpapi");
             JApp.setAPI(API);
+            window.hoster = false;
+            if ($(marketplace).data("key")) window.hoster = $(marketplace).data("key");
+            sHtml = new EJS({
+                url: sJsPAth + "template/mp.js?1.3"
+            }).render({
+                text: JApp.text
+            });
+            $(marketplace).html(sHtml);
             var client_apps = $(marketplace).data("apps");
             if (client_apps) {
                 var client_apps_obj = {};
@@ -5105,16 +5113,9 @@ jQuery(document).ready(function($) {
                 client_apps_obj = JSON.stringify(client_apps_obj);
                 if (client_apps_obj) {
                     JApp.setFilter(client_apps_obj);
+                    $(this).addClass("without-menu");
                 }
             }
-            window.hoster = false;
-            if ($(marketplace).data("key")) window.hoster = $(marketplace).data("key");
-            sHtml = new EJS({
-                url: sJsPAth + "template/mp.js?1.3"
-            }).render({
-                text: JApp.text
-            });
-            $(marketplace).html(sHtml);
             $(this).attr("id", "mp-" + index);
             if (!$("#hosters").length) {
                 if (JApp.isLoadedDefHoster()) {
