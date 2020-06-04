@@ -4821,6 +4821,7 @@ window.JApp = function(that) {
             email: oParams.email,
             app: oParams.appid,
             key: oParams.hoster,
+            group: oParams.group,
             iref: document.location.href,
             eref: document.referrer,
             lang: "en"
@@ -5097,12 +5098,8 @@ jQuery(document).ready(function($) {
             JApp.setAPI(API);
             window.hoster = false;
             if ($(marketplace).data("key")) window.hoster = $(marketplace).data("key");
-            sHtml = new EJS({
-                url: sJsPAth + "template/mp.js?1.3"
-            }).render({
-                text: JApp.text
-            });
-            $(marketplace).html(sHtml);
+            window.group = false;
+            if ($(marketplace).data("group")) window.group = $(marketplace).data("group");
             var client_apps = $(marketplace).data("apps");
             if (client_apps) {
                 var client_apps_obj = {};
@@ -5116,6 +5113,12 @@ jQuery(document).ready(function($) {
                     $(this).addClass("without-menu");
                 }
             }
+            sHtml = new EJS({
+                url: sJsPAth + "template/mp.js?1.3"
+            }).render({
+                text: JApp.text
+            });
+            $(marketplace).html(sHtml);
             $(this).attr("id", "mp-" + index);
             if (!$("#hosters").length) {
                 if (JApp.isLoadedDefHoster()) {
@@ -5193,7 +5196,7 @@ jQuery(document).ready(function($) {
             }, "", urlValue);
         };
         oApps = function($cnt) {
-            var oUtils = JApp.utils, $OfferCntWrap = $cnt.find(".marketplace-offers-wrap"), $OfferCnt = $cnt.find(".marketplace-offers"), SELECTOR_OFFER = ".marketplace-offer", $hosterSelectWrap = $(".marketplace-hoster-selector"), $hosterSelect = $hosterSelectWrap.find(".jelastic-hosters-carousel"), me = {
+            var oUtils = JApp.utils, $OfferCntWrap = $cnt.find(".marketplace-offers-wrap"), $OfferCnt = $cnt.find(".marketplace-offers"), SELECTOR_OFFER = ".marketplace-offer", $hosterSelectWrap = $(".marketplace-hoster-selector"), $hosterSelect = $hosterSelectWrap.find(".jelastic-hosters-carousel"), $marketplace = $cnt.closest(".j-app-mp"), me = {
                 loaded: false,
                 page: 1,
                 cat: DEFAULT_CAT,
@@ -5288,15 +5291,30 @@ jQuery(document).ready(function($) {
                         oApp.shortDescription = oDescr.text();
                         aApps.push(oApp);
                     });
-                    sHtml = new EJS({
-                        url: sJsPAth + "template/app.js?1.4"
-                    }).render({
-                        apps: aApps,
-                        pages: me.getPaging(nPages, me.page),
-                        cutDescr: oUtils.cutStr,
-                        text: JApp.text,
-                        hoster: window.hoster
-                    });
+                    theme = $marketplace.attr("data-theme");
+                    oFilter = JApp.getFilter();
+                    oFilter ? oFilter = JSON.parse(oFilter) : oFilter = [];
+                    if (oFilter["app_id"] && oFilter["app_id"].length > 0 && theme === "mini") {
+                        sHtml = new EJS({
+                            url: sJsPAth + "template/app-mini.js?1.5"
+                        }).render({
+                            apps: aApps,
+                            pages: me.getPaging(nPages, me.page),
+                            cutDescr: oUtils.cutStr,
+                            text: JApp.text,
+                            hoster: window.hoster
+                        });
+                    } else {
+                        sHtml = new EJS({
+                            url: sJsPAth + "template/app.js?1.4"
+                        }).render({
+                            apps: aApps,
+                            pages: me.getPaging(nPages, me.page),
+                            cutDescr: oUtils.cutStr,
+                            text: JApp.text,
+                            hoster: window.hoster
+                        });
+                    }
                     $hosterSelect.appendTo($hosterSelectWrap);
                     $OfferCnt.html(sHtml);
                     $OfferCnt.toggleClass("has-pagging", nPages > 1);
@@ -5530,7 +5548,8 @@ jQuery(document).ready(function($) {
                             email: $userMail.val(),
                             hoster: sKey,
                             lang: JApp.getLang(),
-                            appid: sAppid
+                            appid: sAppid,
+                            group: window.group
                         };
                         $modalForm.addClass(CSS_SHOW_LOADING).find("input[type=submit]").addClass("submit-disabled").attr("disabled", "disabled");
                         JApp.InstallApp(data, function(response) {
@@ -5572,6 +5591,7 @@ jQuery(document).ready(function($) {
             var oHoster = window.hoster, bIsTouch = Modernizr.touch, $wind = $(window), JGA = JApp.GA, EVENT_SHOW_HOSTER_PANEL = "mpShowHosterts", TEXT_CHECK_EMAIL = JApp.text("txSuccess").replace("\\nr\\", "<br>");
             this.each(function() {
                 var me = $(this), marketplace = me.closest(".marketplace-offers"), oData = me.data(), bHoverBlocked = false, sAppid = oData.appid, bIsShownDetails = false, AFTER_CLICK_TIMEOUT = 3e3, $defCont = me.find(".default-state"), $descr = me.find(".description"), $form = me.find("form"), $email = me.find("input[name=email]"), $btnInstall = me.find(".btn-install"), $msgBlock = me.find(".msg-block"), $msgBlockText = $msgBlock.find(".text"), $msgBlockСlose = $msgBlock.find(".close-details"), $close_details = me.find(".close-details"), $popoverCont = me.find(".markeplace-popover-cnt"), $modal = $(".signup_form_modal"), $modalClose = $modal.find(".jlc-modal--close"), $modal_email = $modal.find("#user_email"), nTimeOutShown, bIsActive = false, fnCanHideDetails, fnShowDetails, fnHideModal, fnHideForm, fnShowForm, fnHideDetails, fnCalcPopoverSide, fnInitPopoverDescr, fnShowLoading, fnHideLoading;
+                console.log(me);
                 fnShowLoading = function() {
                     me.addClass(CSS_SHOW_LOADING);
                 };
@@ -5711,11 +5731,12 @@ jQuery(document).ready(function($) {
                     fnHideModal();
                 });
                 $form.submit(function() {
-                    var oUtils = JApp.utils, oModal = oUtils.Modal, sMsg, sKey = window.hoster, $hosterLabel = me.find(".dropdown-menu a[data-hoster]"), data = {
+                    var oUtils = JApp.utils, oModal = oUtils.Modal, sMsg, sKey = window.hoster, group = window.group, $hosterLabel = me.find(".dropdown-menu a[data-hoster]"), data = {
                         email: $email.val(),
                         hoster: sKey,
                         lang: JApp.getLang(),
-                        appid: sAppid
+                        appid: sAppid,
+                        group: group
                     };
                     if (oUtils.isValidEmail(data.email)) {
                         if ($form.hasClass("open-modal")) {

@@ -321,3 +321,11 @@
   background-image: url(/mp-widget/img/flags/png/usa.png);
   background-image: url(/mp-widget/img/flags/usa.svg);
 }
+.flag-zaf,
+.flag-za,
+.flag-710,
+.flag-ioc-rsa,
+.flag-fifa-rsa {
+  background-image: url(/mp-widget/img/flags/png/zaf.png);
+  background-image: url(/mp-widget/img/flags/zaf.svg);
+}

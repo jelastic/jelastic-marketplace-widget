@@ -539,6 +539,47 @@ input {
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .error .sign {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAdCAYAAADLnm6HAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxYzJmOWFjZC03ZTVhLTBhNDAtOWM2ZC1mYmVjMTdlN2ZkNWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjIzMUM5ODdFQjM0MTFFMzk1QUFBQjQxNkM5ODE2MEEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjIzMUM5ODZFQjM0MTFFMzk1QUFBQjQxNkM5ODE2MEEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OTU3NzI0ZGEtMmMyMS1hMDQ2LTk1YmYtMjk5NmM5ZDdlYTM2IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFjMmY5YWNkLTdlNWEtMGE0MC05YzZkLWZiZWMxN2U3ZmQ1YSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PkZIbA4AAAH9SURBVHjaYrlpZ8xAJpAC4igoexkQPyPHEBYyLZcF4hNQR4BAIRBbAPFjUg1iIsNyZiDeiGQ5LDQ2QuVo7oB0IDbEIm4IlaOpAwSBuAmPfBNUDc0c0AjEwnjkhaFqaOIALSDOJEJdJlQt1R3QjyXXvATiF1hyVj+1HeALxG5oYiVALAfFeWhyblA9BAEjEQURGxBfBWIVJDFQflcA4n9IHrkPdQwM3AFibSD+RWkI5KNZDgJnkCxngLLPoqlRgeqlKArEgbgGi7gqFjFlLGI1UDPIdkArEPNhEVdB08uIw1F8UDPIcoARECfikONAi28ZIObEoTYRahbJDphIQF4dia1GwJMTSXVABBDbEIgeYh3AADUrglgHgIKyi4jcQYoDGKBmchLjgDJofU9tB8hCzcbrAJCiciJLR10gToBifSL1lKN7joWYYMIBxIB4Pom1KSx6I7GFgDWuhIIDbANiOyjeRoK+CKhdKCGAN6tgAV+gDdKPUP4lIH4CxDxE6gfZZQYqwmEhAIpHUprHJ5EsZ4CyT5Kg3xhqJ9jnIFe3kRiX9miJSRYqRgoA2ckDioIgQhUGjub8ISCeDeWnktHEB9kZxEJswwELUCBU0RDT0AFFwXOGgQPPQQ6YCsQPBsBykJ1TQVFwE9qpsIeWaFw0tvgbEF8E4oNA/AEgwABgrkmeCxOwSgAAAABJRU5ErkJggg==");
 }
+.marketplace .marketplace-offers .freewall-cell.mini-offer {
+  height: auto;
+  padding: 0;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer {
+  border-radius: 30px;
+  box-shadow: none;
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer a.btn-install {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #019ea3 0, #00cda7);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 58px;
+  z-index: 2;
+  cursor: pointer;
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer a.btn-install:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #00cda7 0, #019ea3);
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer a.btn-install:hover,
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer a.btn-install:focus {
+  color: #fff;
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer.show-form a.btn-install {
+  display: none;
+}
+.marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer.loading:before {
+  border-radius: 30px;
+}
 .marketplace .app-loading {
   position: absolute;
   z-index: 1000;

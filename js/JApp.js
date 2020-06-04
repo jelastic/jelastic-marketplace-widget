@@ -193,6 +193,7 @@ window.JApp = (function (that) {
             email: oParams.email,
             app: oParams.appid,
             key: oParams.hoster,
+            group: oParams.group,
             iref: document.location.href,
             eref: document.referrer,
             lang: 'en'

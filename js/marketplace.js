@@ -32,10 +32,8 @@ jQuery(document).ready(function ($) {
             window.hoster = false;
             if ($(marketplace).data('key')) window.hoster = $(marketplace).data('key');
 
-            sHtml = new EJS({url: sJsPAth + 'template/mp.js?1.3'}).render({
-                text: JApp.text
-            });
-            $(marketplace).html(sHtml);
+            window.group = false;
+            if ($(marketplace).data('group')) window.group = $(marketplace).data('group');
 
             var client_apps = $(marketplace).data('apps');
             if (client_apps) {
@@ -51,8 +49,13 @@ jQuery(document).ready(function ($) {
                 }
             }
 
-            $(this).attr('id', 'mp-' + index);
+            sHtml = new EJS({url: sJsPAth + 'template/mp.js?1.3'}).render({
+                text: JApp.text
+            });
+            $(marketplace).html(sHtml);
 
+
+            $(this).attr('id', 'mp-' + index);
 
             if (!$('#hosters').length) {
                 if (JApp.isLoadedDefHoster()) {
@@ -161,6 +164,7 @@ jQuery(document).ready(function ($) {
                 SELECTOR_OFFER = '.marketplace-offer',
                 $hosterSelectWrap = $(".marketplace-hoster-selector"),
                 $hosterSelect = $hosterSelectWrap.find('.jelastic-hosters-carousel'),
+                $marketplace = $cnt.closest('.j-app-mp'),
                 me = {
                     loaded: false,
                     page: 1,
@@ -285,14 +289,31 @@ jQuery(document).ready(function ($) {
 
                             aApps.push(oApp);
                         });
+                        
+                        theme = $marketplace.attr('data-theme');
+                        oFilter = JApp.getFilter();
+                        oFilter ? oFilter = JSON.parse(oFilter) : oFilter = [];
 
-                        sHtml = new EJS({url: sJsPAth + 'template/app.js?1.4'}).render({
-                            apps: aApps,
-                            pages: me.getPaging(nPages, me.page),
-                            cutDescr: oUtils.cutStr,
-                            text: JApp.text,
-                            hoster: window.hoster
-                        });
+                        if ((oFilter['app_id']) && (oFilter['app_id'].length > 0) && (theme === 'mini')) {
+
+                            sHtml = new EJS({url: sJsPAth + 'template/app-mini.js?1.5'}).render({
+                                apps: aApps,
+                                pages: me.getPaging(nPages, me.page),
+                                cutDescr: oUtils.cutStr,
+                                text: JApp.text,
+                                hoster: window.hoster
+                            });
+                        } else {
+
+                            sHtml = new EJS({url: sJsPAth + 'template/app.js?1.4'}).render({
+                                apps: aApps,
+                                pages: me.getPaging(nPages, me.page),
+                                cutDescr: oUtils.cutStr,
+                                text: JApp.text,
+                                hoster: window.hoster
+                            });
+                        }
+
 
                         $hosterSelect.appendTo($hosterSelectWrap);
 
@@ -502,6 +523,8 @@ jQuery(document).ready(function ($) {
                     me.XHR = JApp.loadHosters(function (oResp) {
                         me.render(oResp);
                     });
+                    
+
 
                     setTimeout(function () {
                         var loadFilter = getParameterByName('filter'),
@@ -623,7 +646,8 @@ jQuery(document).ready(function ($) {
                                 email: $userMail.val(),
                                 hoster: sKey,
                                 lang: JApp.getLang(),
-                                appid: sAppid
+                                appid: sAppid,
+                                group: window.group,
                             };
 
                         $modalForm.addClass(CSS_SHOW_LOADING).find('input[type=submit]').addClass('submit-disabled').attr('disabled', 'disabled');
@@ -716,6 +740,8 @@ jQuery(document).ready(function ($) {
 
                     fnShowLoading,
                     fnHideLoading;
+                
+                console.log(me);
 
                 fnShowLoading = function () {
                     me.addClass(CSS_SHOW_LOADING);
@@ -911,12 +937,14 @@ jQuery(document).ready(function ($) {
                         oModal = oUtils.Modal,
                         sMsg,
                         sKey = window.hoster,
+                        group = window.group,
                         $hosterLabel = me.find('.dropdown-menu a[data-hoster]'),
                         data = {
                             email: $email.val(),
                             hoster: sKey,
                             lang: JApp.getLang(),
-                            appid: sAppid
+                            appid: sAppid,
+                            group: group
                         };
 
                     if (oUtils.isValidEmail(data.email)) {

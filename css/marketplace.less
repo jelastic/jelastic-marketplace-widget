@@ -1,4 +1,3 @@
-
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -544,6 +543,53 @@ input {
           }
         }
       }
+
+      &.mini-offer {
+        height: auto;
+        padding: 0;
+        max-width: 300px;
+        margin: 0 auto;
+        .marketplace-offer {
+          border-radius: 30px;
+          box-shadow: none;
+          a.btn-install {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            color: #fff;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #019ea3 0, #00cda7);
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 58px;
+            z-index: 2;
+            cursor: pointer;
+            &:hover {
+              color: #fff;
+              background: linear-gradient(90deg, #00cda7 0, #019ea3);
+            }
+            &:hover,
+            &:focus {
+              color: #fff;
+            }
+          }
+          &.show-form {
+            a.btn-install {
+              display: none;
+            }
+          }
+          &.loading {
+            &:before {
+              border-radius: 30px;
+            }
+          }
+        }
+      }
+
     }
   }
 
