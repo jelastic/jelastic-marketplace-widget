@@ -5458,8 +5458,16 @@ jQuery(document).ready(function($) {
                     if (!me.loaded && me.XHR) {
                         me.XHR.abort();
                     }
-                    me.XHR = JApp.loadHosters(function(oResp) {
-                        me.render(oResp);
+                    me.XHR = JApp.loadHosters(function(oLoadedHosters) {
+                        $.each(oLoadedHosters, function(index) {
+                            if (this.keyword === "servint" || this.hasSignup === false || this.hasSignup === undefined || !this.hasSignup) {
+                                delete oLoadedHosters[index];
+                            }
+                        });
+                        oLoadedHosters = oLoadedHosters.filter(function(el) {
+                            return el != null;
+                        });
+                        me.render(oLoadedHosters);
                     });
                     setTimeout(function() {
                         var loadFilter = getParameterByName("filter"), loadPage = getParameterByName("mpage") || 1;
@@ -5591,7 +5599,6 @@ jQuery(document).ready(function($) {
             var oHoster = window.hoster, bIsTouch = Modernizr.touch, $wind = $(window), JGA = JApp.GA, EVENT_SHOW_HOSTER_PANEL = "mpShowHosterts", TEXT_CHECK_EMAIL = JApp.text("txSuccess").replace("\\nr\\", "<br>");
             this.each(function() {
                 var me = $(this), marketplace = me.closest(".marketplace-offers"), oData = me.data(), bHoverBlocked = false, sAppid = oData.appid, bIsShownDetails = false, AFTER_CLICK_TIMEOUT = 3e3, $defCont = me.find(".default-state"), $descr = me.find(".description"), $form = me.find("form"), $email = me.find("input[name=email]"), $btnInstall = me.find(".btn-install"), $msgBlock = me.find(".msg-block"), $msgBlockText = $msgBlock.find(".text"), $msgBlockСlose = $msgBlock.find(".close-details"), $close_details = me.find(".close-details"), $popoverCont = me.find(".markeplace-popover-cnt"), $modal = $(".signup_form_modal"), $modalClose = $modal.find(".jlc-modal--close"), $modal_email = $modal.find("#user_email"), nTimeOutShown, bIsActive = false, fnCanHideDetails, fnShowDetails, fnHideModal, fnHideForm, fnShowForm, fnHideDetails, fnCalcPopoverSide, fnInitPopoverDescr, fnShowLoading, fnHideLoading;
-                console.log(me);
                 fnShowLoading = function() {
                     me.addClass(CSS_SHOW_LOADING);
                 };
