@@ -3,7 +3,7 @@
         <div class="freewall-cell" data-index="<%=i%>">
         <div class="marketplace-offer" data-index="<%=i%>" data-appid="<%=app.app_id %>">
         <div class="default-state">
-        <div class="icon"><% if (app.logo) { %><img src="<%=app.logo%>"><span class="valign-helper"></span><%}%>
+        <div class="icon"><% if (app.logo) { %><img src="<%=app.logo%>" alt="<%=app.name%>"><span class="valign-helper"></span><%}%>
         </div>
         <div class="name"><%=app.name%></div>
         </div>
@@ -11,7 +11,7 @@
             <span class="close-details"></span>
             <span class="top">
                 <% if (app.logo) { %>
-                    <img src="<%=app.logo%>">
+                    <img src="<%=app.logo%>" alt="<%=app.name%>">
                 <% } %>
                 <span class="valign-helper">
                     <%=app.name%>
