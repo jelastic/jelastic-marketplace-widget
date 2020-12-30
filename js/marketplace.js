@@ -520,10 +520,24 @@ jQuery(document).ready(function ($) {
                         me.XHR.abort();
                     }
 
-                    me.XHR = JApp.loadHosters(function (oResp) {
-                        me.render(oResp);
+                    me.XHR = JApp.loadHosters(function (oLoadedHosters) {
+
+                        $.each(oLoadedHosters, function (index) {
+
+                            if (this.keyword === 'servint' || this.hasSignup === false || this.hasSignup === undefined|| !this.hasSignup) {
+                                delete oLoadedHosters[index];
+                            }
+
+                        });
+
+                        oLoadedHosters = oLoadedHosters.filter(function (el) {
+                            return el != null;
+                        });
+
+                        me.render(oLoadedHosters);
                     });
-                    
+
+
 
 
                     setTimeout(function () {
@@ -740,8 +754,6 @@ jQuery(document).ready(function ($) {
 
                     fnShowLoading,
                     fnHideLoading;
-                
-                console.log(me);
 
                 fnShowLoading = function () {
                     me.addClass(CSS_SHOW_LOADING);
