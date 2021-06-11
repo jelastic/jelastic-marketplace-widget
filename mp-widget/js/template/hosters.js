@@ -16,7 +16,7 @@
                             <a href="#" class="show-info" data-hoster="<%=oHoster.keyword%>"
                             title="About <%=oHoster.name%>">i</a>
                             <span class="logo-wrapper">
-                            <img src="//jelastic.com/wp-content/themes/salient/img/hosters/hosters_signin/<%=oHoster.keyword%>.png"
+                            <img src="<%= oHoster.logo %>"
                             alt="<%=oHoster.name%>">
                             </span>
                             <span class="hoster-regions">

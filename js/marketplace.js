@@ -49,7 +49,7 @@ jQuery(document).ready(function ($) {
                 }
             }
 
-            sHtml = new EJS({url: sJsPAth + 'template/mp.js?1.3'}).render({
+            sHtml = new EJS({url: sJsPAth + 'template/mp.js?1.3.0'}).render({
                 text: JApp.text
             });
             $(marketplace).html(sHtml);
@@ -296,7 +296,7 @@ jQuery(document).ready(function ($) {
 
                         if ((oFilter['app_id']) && (oFilter['app_id'].length > 0) && (theme === 'mini')) {
 
-                            sHtml = new EJS({url: sJsPAth + 'template/app-mini.js?1.5'}).render({
+                            sHtml = new EJS({url: sJsPAth + 'template/app-mini.js?1.5.0'}).render({
                                 apps: aApps,
                                 pages: me.getPaging(nPages, me.page),
                                 cutDescr: oUtils.cutStr,
@@ -305,7 +305,7 @@ jQuery(document).ready(function ($) {
                             });
                         } else {
 
-                            sHtml = new EJS({url: sJsPAth + 'template/app.js?1.4'}).render({
+                            sHtml = new EJS({url: sJsPAth + 'template/app.js?1.4.1'}).render({
                                 apps: aApps,
                                 pages: me.getPaging(nPages, me.page),
                                 cutDescr: oUtils.cutStr,
@@ -520,18 +520,14 @@ jQuery(document).ready(function ($) {
                         me.XHR.abort();
                     }
 
-                    me.XHR = JApp.loadHosters(function (oLoadedHosters) {
+                    me.XHR = JApp.loadHosters(function (response) {
 
-                        $.each(oLoadedHosters, function (index) {
+                        var oLoadedHosters = [];
 
-                            if (this.keyword === 'servint' || this.hasSignup === false || this.hasSignup === undefined|| !this.hasSignup) {
-                                delete oLoadedHosters[index];
+                        $.each(response, function (index) {
+                            if (this.keyword !== 'servint' && this.hasSignup === true) {
+                                oLoadedHosters.push(this);
                             }
-
-                        });
-
-                        oLoadedHosters = oLoadedHosters.filter(function (el) {
-                            return el != null;
                         });
 
                         me.render(oLoadedHosters);
@@ -582,7 +578,7 @@ jQuery(document).ready(function ($) {
                         hosters.splice(0, 0, hosters.splice(currentHosterIndex, 1)[0]);
                     }
 
-                    sHtml = new EJS({url: sJsPAth + 'template/hosters.js?1.6'}).render({
+                    sHtml = new EJS({url: sJsPAth + 'template/hosters.js?1.6.1'}).render({
                         hosters: hosters,
                         text: JApp.text
                     });
@@ -619,7 +615,7 @@ jQuery(document).ready(function ($) {
                             }
                         });
 
-                        sHtml = new EJS({url: sJsPAth + 'template/hoster.js?1.2'}).render({
+                        sHtml = new EJS({url: sJsPAth + 'template/hoster.js?1.2.1'}).render({
                             oHoster: hosters[currentHosterIndex],
                         });
                         $(me.modal).after(sHtml);

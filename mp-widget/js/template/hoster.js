@@ -9,7 +9,7 @@
             <div class="h-row">
                 <div class="left">Support</div>
                 <div class="right">
-                    <% if (oHoster.support === 'new') { %>
+                    <% if (oHoster.support === 'new' || oHoster.support == 0) { %>
                         <i class="ico ico--new"></i>
                     <% } else { %>
                         <% var rating %>
