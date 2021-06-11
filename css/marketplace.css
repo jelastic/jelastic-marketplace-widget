@@ -1394,12 +1394,6 @@ input {
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid label:hover .show-info {
   background: linear-gradient(to right, #00b2b7 0%, #00cda7 100%);
 }
-@media (max-width: 576px) {
-  .signup_form_modal .modal-dialog .modal-content form .hosters-grid label {
-    height: 130px;
-    margin-bottom: 10px;
-  }
-}
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid .hoster-regions {
   width: 100%;
   display: flex;
@@ -1417,19 +1411,10 @@ input {
   padding: 20px 0;
   height: 90px;
 }
-@media (max-width: 576px) {
-  .signup_form_modal .modal-dialog .modal-content form .hosters-grid .logo-wrapper {
-    padding: 15px 0;
-    height: 95px;
-    max-width: 160px;
-    margin: 0 auto;
-  }
-}
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid .logo-wrapper img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid .show-info {
   transition: .3s;
