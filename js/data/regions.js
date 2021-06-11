@@ -10,6 +10,7 @@ window.jdata.continent = {
 };
 window.jdata.location = {
     "US" : {
+        "POR": "Portland",
         "LA" : "Los Angeles",
         "CH" : "Chicago",
         "TX" : "Texas",
@@ -17,7 +18,20 @@ window.jdata.location = {
         "NJ" : "New Jersey",
         "NY" : "New York",
         "NY1": "New York 1",
-        "NY2": "New York 2"
+        "NY2": "New York 2",
+        "VH": "Vint Hill",
+        "MI": "Miami",
+        "RI": "Richmond",
+        "PH" : "Phoenix",
+        "HI" : "Hillsboro",
+        "PHI" : "Philadelphia",
+        "DA" : "Dallas"
+    },
+    "BG": {
+        "SOF" : "Sofia"
+    },
+    "CA": {
+        "BEH": "Beauharnois"
     },
     "FI" : {
         "HE" : "Helsinki",
@@ -29,7 +43,8 @@ window.jdata.location = {
         "BN" : "Bern",
         "GG" : "Gland - Geneva",
         "GN1" : "Geneva 1",
-        "GN2" : "Geneva 2"
+        "GN2" : "Geneva 2",
+        "LAU" : "Lausanne"
     },
     "BR": {
         "CMP": "Campinas",
@@ -56,7 +71,8 @@ window.jdata.location = {
     "SE": {
         "SH1": "Stockholm North",
         "SH2": "Stockholm South",
-        "SH3": "Stockholm West"
+        "SH3": "Stockholm West",
+        "SU": "Sundsvall"
     },
     "SA": {
         "JD": "Jeddah",
@@ -66,7 +82,8 @@ window.jdata.location = {
     "GB": {
         "LND": "London",
         "LND1": "London 1",
-        "LND2": "London 2"
+        "LND2": "London 2",
+        "MA": "Manchester"
     },
     "DE": {
         "FR": "Frankfurt"
@@ -75,6 +92,13 @@ window.jdata.location = {
         "MO": "Moscow"
     },
     "FR": {
-      "AP": "Aix-en-Provence"
+        "AP": "Aix-en-Provence",
+        "MRS": "Marseille",
+    },
+    "CO": {
+        "BO": "Bogota"
+    },
+    "LY": {
+        "TR": "Tripoli"
     }
 };

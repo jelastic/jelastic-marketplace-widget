@@ -86,7 +86,7 @@ window.JApp = (function (that) {
         },
 
         getHosters: function () {
-            return "//platforms-info.jelastic.com/api/site/GetHosters";
+            return "https://jelastic.cloud/wp-json/jelastic/hosters/";
         },
 
         getInstallAppURL: function () {
@@ -123,8 +123,8 @@ window.JApp = (function (that) {
             async: true,
             success: function (response) {
 
-                if (response.result == 0 && response.hosters) {
-                    oResp = response.hosters;
+                if (response.response) {
+                    oResp = response.response;
                 }
 
                 if (fnCallback) {
