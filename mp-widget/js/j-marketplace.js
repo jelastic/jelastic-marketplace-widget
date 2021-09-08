@@ -266,7 +266,7 @@
                     L.apply(e, O.call(t));
                 } : function(e, t) {
                     var n = e.length, r = 0;
-                    while (e[n++] = t[r++]) ;
+                    while (e[n++] = t[r++]);
                     e.length = n - 1;
                 }
             };
@@ -926,7 +926,7 @@
         prev: !0
     };
     function O(e, t) {
-        while ((e = e[t]) && 1 !== e.nodeType) ;
+        while ((e = e[t]) && 1 !== e.nodeType);
         return e;
     }
     S.fn.extend({
@@ -2123,12 +2123,12 @@
                 this;
             }
         }), c = l.props;
-        for ((!function(e, t) {
+        for (!function(e, t) {
             var n, r, i, o, a;
             for (n in e) if (i = t[r = X(n)], o = e[n], Array.isArray(o) && (i = o[1], o = e[n] = o[0]), 
             n !== r && (e[r] = o, delete e[n]), (a = S.cssHooks[r]) && "expand" in a) for (n in o = a.expand(o), 
             delete e[r], o) n in e || (e[n] = o[n], t[n] = i); else t[r] = i;
-        }(c, l.opts.specialEasing)); r < i; r++) if (n = ft.prefilters[r].call(l, o, c, l.opts)) return m(n.stop) && (S._queueHooks(l.elem, l.opts.queue).stop = n.stop.bind(n)), 
+        }(c, l.opts.specialEasing); r < i; r++) if (n = ft.prefilters[r].call(l, o, c, l.opts)) return m(n.stop) && (S._queueHooks(l.elem, l.opts.queue).stop = n.stop.bind(n)), 
         n;
         return S.map(c, ct, l), m(l.opts.start) && l.opts.start.call(o, l), l.progress(l.opts.progress).done(l.opts.done, l.opts.complete).fail(l.opts.fail).always(l.opts.always), 
         S.fx.timer(S.extend(u, {
@@ -4804,7 +4804,7 @@ JApp.utils = function(that) {
         return pattern.test(email);
     };
     that.isValidEmailStrong = function(email) {
-        var pattern = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])/;
+        var pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])/;
         return pattern.test(email);
     };
     that.cutStr = function(sStr, nMAxLng) {
@@ -5650,7 +5650,7 @@ jQuery(document).ready(function($) {
                     e.preventDefault();
                     fnHideDetails(true);
                 });
-                $email.keyup(function(e) {
+                $($email).on("input", function(e) {
                     var oUtils = JApp.utils, $modal_email = $("#user_email");
                     $modal_email.val($(this).val());
                     if (oUtils.isValidEmailStrong($modal_email.val())) {

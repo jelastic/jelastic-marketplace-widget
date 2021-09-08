@@ -907,7 +907,7 @@ jQuery(document).ready(function ($) {
                 });
 
 
-                $email.keyup(function (e) {
+                $($email).on('input', function (e) {
                     var oUtils = JApp.utils,
                         $modal_email = $('#user_email');
 
