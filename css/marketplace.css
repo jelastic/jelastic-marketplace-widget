@@ -129,7 +129,7 @@ input {
   top: 0;
   bottom: 1px;
   margin: auto;
-  transition: .2s;
+  transition: 0.2s;
 }
 .marketplace .marketplace-menu-wrap .marketplace-menu a {
   display: block;
@@ -208,7 +208,7 @@ input {
   left: 0;
   top: 0;
   background: #fff;
-  opacity: .4;
+  opacity: 0.4;
   z-index: 1;
 }
 .marketplace .marketplace-offers.has-pagging {
@@ -297,7 +297,6 @@ input {
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .default-state .icon .valign-helper {
   display: inline-block;
-  height: 100%;
   vertical-align: middle;
 }
 @media (max-width: 992px) {
@@ -353,7 +352,6 @@ input {
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .details-state .top .valign-helper {
   display: inline-block;
-  height: 100%;
   vertical-align: middle;
   font-size: 22px;
   margin-bottom: 15px;
@@ -1154,7 +1152,7 @@ input {
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal .jlc-form--submit.submit-disabled {
   cursor: default;
-  opacity: .5;
+  opacity: 0.5;
 }
 .modal-open .signup_form_modal,
 .modal-open #hoster-data {
@@ -1186,7 +1184,7 @@ input {
 }
 .signup_form_modal .modal-dialog {
   max-width: 800px;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 @media (min-width: 576px) {
   .signup_form_modal .modal-dialog {
@@ -1417,7 +1415,7 @@ input {
   object-fit: contain;
 }
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid .show-info {
-  transition: .3s;
+  transition: 0.3s;
   background: #dadae4;
   width: 17px;
   height: 17px;
@@ -1462,7 +1460,7 @@ input {
   background: linear-gradient(90deg, #00cda7, #019ea3);
 }
 .signup_form_modal .modal-dialog .modal-content form input.jlc-form--submit.submit-disabled {
-  opacity: .5;
+  opacity: 0.5;
   cursor: default;
 }
 .loading:before {
@@ -1516,7 +1514,7 @@ input {
 #hoster-data .modal-dialog {
   max-width: 550px;
   width: 100%;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 @media (min-width: 576px) {
   #hoster-data .modal-dialog {
