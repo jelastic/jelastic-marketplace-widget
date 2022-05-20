@@ -5439,7 +5439,7 @@ jQuery(document).ready(function($) {
                         hosters.splice(0, 0, hosters.splice(currentHosterIndex, 1)[0]);
                     }
                     sHtml = new EJS({
-                        url: sJsPAth + "template/hosters.js?1.6.1"
+                        url: sJsPAth + "template/hosters.js?v=200522"
                     }).render({
                         hosters: hosters,
                         text: JApp.text
@@ -5674,6 +5674,7 @@ jQuery(document).ready(function($) {
                     fnHideModal();
                 });
                 $form.submit(function() {
+                    $form.addClass("loading");
                     var oUtils = JApp.utils, oModal = oUtils.Modal, sMsg, sKey = window.hoster, group = window.group, $hosterLabel = me.find(".dropdown-menu a[data-hoster]"), data = {
                         email: $email.val(),
                         hoster: sKey,
@@ -5737,6 +5738,7 @@ jQuery(document).ready(function($) {
                             position: "top"
                         });
                     }
+                    $form.removeClass("loading");
                     return false;
                 });
             });
