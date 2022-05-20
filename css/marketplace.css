@@ -93,7 +93,7 @@ input {
   display: none;
 }
 .marketplace .marketplace-menu-wrap {
-  padding: 50px 15px;
+  padding: 50px 0;
 }
 @media (max-width: 992px) {
   .marketplace .marketplace-menu-wrap {
@@ -103,19 +103,19 @@ input {
 }
 .marketplace .marketplace-menu-wrap .current-item {
   display: none;
-  border: 1px solid #0096f3;
+  border: 1px solid #cb333b;
   cursor: pointer;
-  color: #0096f3;
-  box-shadow: 0 0 30px 0 rgba(0, 132, 245, 0.2);
+  color: #cb333b;
+  box-shadow: 0 0 30px 0 rgba(203, 50, 59, 0.1);
   padding: 14px 40px;
   line-height: 1;
   height: auto;
-  border-radius: 30px;
+  border-radius: 4px;
   font-size: 18px;
   position: relative;
 }
 .marketplace .marketplace-menu-wrap .current-item:before {
-  border: solid #0096f3;
+  border: solid #cb333b;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
@@ -131,48 +131,46 @@ input {
   margin: auto;
   transition: 0.2s;
 }
-.marketplace .marketplace-menu-wrap .marketplace-menu a {
-  display: block;
-  cursor: pointer;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3NpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxYzJmOWFjZC03ZTVhLTBhNDAtOWM2ZC1mYmVjMTdlN2ZkNWEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjIzMUM5ODNFQjM0MTFFMzk1QUFBQjQxNkM5ODE2MEEiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjIzMUM5ODJFQjM0MTFFMzk1QUFBQjQxNkM5ODE2MEEiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Mjc0OGFkYzctNzA3ZS0yYjQyLWEyNTEtMzlmMmM5ZjYxYTAxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjFjMmY5YWNkLTdlNWEtMGE0MC05YzZkLWZiZWMxN2U3ZmQ1YSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvQv0UkAAAAwSURBVHjaYmRY89+TgYFhLgMEJDMCBZ4BGZJQgedMDKiAESSQAsQvgPgpSAtAgAEAalcJIbLLHQcAAAAASUVORK5CYII=") 10px 18px no-repeat;
-  color: #676767;
-  font-size: 14px;
-  height: 38px;
-  line-height: 38px;
-  padding-left: 20px;
-  transition: none;
-  border-radius: 5px;
-}
 .marketplace .marketplace-menu-wrap .marketplace-menu a.marked {
-  color: #0096f3;
+  color: #CB333B;
 }
 .marketplace .marketplace-menu-wrap .marketplace-menu a.active {
-  border: 1px solid #0096f3;
-  background-image: none;
+  background: #CB333B !important;
+  color: #fff !important;
   cursor: default;
-  color: #0096f3;
 }
 .marketplace .marketplace-menu-wrap .marketplace-menu a:hover {
-  color: #0096f3;
-  border: 1px solid #0096f3;
+  background: #CB333B !important;
+  color: #fff !important;
 }
 .marketplace .marketplace-menu-wrap .marketplace-menu .cat-items {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .marketplace .marketplace-menu-wrap .marketplace-menu .cat-items a {
-  background-color: #ffffff;
-  box-shadow: 0 0 30px 0 rgba(0, 132, 245, 0.2);
-  background: none;
-  padding: 18px 35px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  padding: 18px 10px;
   line-height: 1;
   height: auto;
-  border-radius: 30px;
+  border-radius: 4px;
   margin: 5px;
-  border: 1px solid #fff;
-  font-size: 18px;
+  font-size: 14px;
+  color: #282735;
+  width: calc(20% - 10px);
+  text-align: center;
+  font-weight: 400;
+}
+@media (max-width: 1200px) {
+  .marketplace .marketplace-menu-wrap .marketplace-menu .cat-items a {
+    width: calc(25% - 10px);
+  }
+}
+@media (max-width: 1000px) {
+  .marketplace .marketplace-menu-wrap .marketplace-menu .cat-items a {
+    width: calc(50% - 10px);
+  }
 }
 @media (max-width: 992px) {
   .marketplace .marketplace-menu-wrap .marketplace-menu .cat-items a {
@@ -392,14 +390,14 @@ input {
   cursor: pointer;
   width: 100%;
   transition: bottom 0.1s;
-  border-radius: 30px;
-  background: linear-gradient(-234deg, #019da3, #00cda9);
+  border-radius: 4px;
+  background: #cb333b;
   outline: none;
   font-size: 24px;
   z-index: 9;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .details-state .btn-install:hover {
-  background: linear-gradient(90deg, #00cda9, #019da3);
+  background: #9b2637;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer.show-form .details-state .btn-install {
   display: none;
@@ -426,7 +424,7 @@ input {
   border-top-left-radius: 3px;
   border: 1px solid #c9c9d3;
   background: #ffffff;
-  color: #42aaff;
+  color: #CB333B;
   font-size: 19px;
   font-style: italic;
   font-family: Arial;
@@ -443,9 +441,9 @@ input {
   height: 50px;
   line-height: 50px;
   padding: 3px 60px 3px 15px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   border: 1px solid #d0d0e0;
   background: #ffffff;
   color: #9191a0;
@@ -464,18 +462,25 @@ input {
   height: 100%;
   background: #d0d0e0 url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center no-repeat;
   cursor: default;
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 4px 4px 0;
   background-size: 17px;
   padding: 0;
   border: 0;
+  margin: 0;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.valid .arrow-go {
   cursor: pointer;
-  background: #019da3 url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center / 17px no-repeat;
+  background: #CB333B url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center / 17px no-repeat;
+}
+.marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.valid .arrow-go:hover {
+  background-color: #9b2637;
+}
+.marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.loading:after {
+  display: none;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.loading .arrow-go {
   cursor: progress;
-  background: linear-gradient(0deg, #019da3 0%, #01b5a6 65%, #00cda9 100%);
+  background: #9b2637;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.loading .arrow-go:before {
   content: " ";
@@ -576,7 +581,7 @@ input {
   display: none;
 }
 .marketplace .marketplace-offers .freewall-cell.mini-offer .marketplace-offer.loading:before {
-  border-radius: 30px;
+  border-radius: 4px;
 }
 .marketplace .app-loading {
   position: absolute;
@@ -600,7 +605,7 @@ input {
   height: 60px;
   line-height: 60px;
   font-size: 35px;
-  color: #42aaff;
+  color: #CB333B;
   text-align: center;
 }
 .marketplace .markeplace-popover-cnt {
@@ -674,41 +679,33 @@ input {
   cursor: pointer;
 }
 .marketplace .pagination a:hover {
-  background: #eee;
+  border-color: #cb323b;
+  background: #cb323b;
+  color: #fff;
 }
 .marketplace .pagination td {
-  width: 30px;
+  padding: 2px 1px;
   border: none;
-  padding: 0;
-}
-.marketplace .pagination td:first-child a {
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  border-left: 1px solid #ddd;
-}
-.marketplace .pagination td:last-child a {
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
 }
 .marketplace .pagination a,
 .marketplace .pagination span {
-  display: inline-block;
-  height: 30px;
-  width: 30px;
-  line-height: 16px;
-  color: #337ab7;
-  border-top: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: 6px 0;
-  text-align: center;
+  height: 32px;
+  width: 32px;
+  color: #000;
+  border: 1px solid #e2e6f2;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+  border-radius: 4px;
 }
 .marketplace .pagination a.active,
 .marketplace .pagination span.active {
-  background: #337AB7 !important;
-  border-color: #337AB7;
+  background: #cb323b !important;
+  border-color: #cb323b;
   color: #ffffff;
+  cursor: default;
 }
 .marketplace.mobile .current-item {
   display: block;
@@ -717,7 +714,7 @@ input {
   display: none;
   width: 100%;
   z-index: 5;
-  padding: 10px;
+  padding: 10px 0;
 }
 .marketplace.mobile .marketplace-offers-wrap {
   padding-left: 0;
@@ -1068,14 +1065,14 @@ input {
   height: 14px;
   margin: 0 2px;
   text-align: center;
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/rate-star.svg);
+  background: url("data:image/svg+xml,%3Csvg id='addb128b-0553-4cce-b20d-585404887934' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star line%3C/title%3E%3Cpath d='M4.85,22.87a.43.43,0,0,1-.42-.5l1.33-7.74L.13,9.14a.43.43,0,0,1,.24-.73L8.14,7.28l3.48-7A.43.43,0,0,1,12,0h0a.43.43,0,0,1,.38.24l3.48,7,7.77,1.13a.43.43,0,0,1,.24.73l-5.62,5.48,1.33,7.74a.43.43,0,0,1-.62.45l-7-3.65L5,22.82A.43.43,0,0,1,4.85,22.87ZM1.35,9.14l5.16,5a.43.43,0,0,1,.12.38l-1.22,7.1L11.8,18.3a.43.43,0,0,1,.4,0l6.38,3.35-1.22-7.1a.43.43,0,0,1,.12-.38l5.16-5-7.13-1a.43.43,0,0,1-.32-.23L12,1.4,8.81,7.86a.43.43,0,0,1-.32.23Z' fill='%23c3d0d8'/%3E%3C/svg%3E") center / cover no-repeat;
   font-size: 0;
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-list .je-carousel-item .ico.ico--new {
   display: block;
   width: 100%;
   height: 24px;
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/new-member.png);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='625936d2-c6ff-44b7-a38f-0fc749a72c2d' data-name='%D0%A1%D0%BB%D0%BE%D0%B9 1' width='48' height='19' viewBox='0 0 48 19'%3E%3Ctitle%3Enew star%3C/title%3E%3Cpath d='M12,4.68a54.49,54.49,0,0,1,17-3c9,0,19,6,19,6s-3,1-4,2-1,2-7,2-16,4-18,5-7-6-7-8Z' fill='%23CB333B'/%3E%3Cpath d='M7.64,17a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L4.1,6.8A.32.32,0,0,1,4,6.47a.32.32,0,0,1,.26-.22l5.83-.84L12.71.18A.32.32,0,0,1,13,0h0a.32.32,0,0,1,.29.18L15.9,5.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L13,14.25,7.79,17A.33.33,0,0,1,7.64,17Z' fill='%23CB333B'/%3E%3Cpath d='M5,6.79l3.87,3.74a.32.32,0,0,1,.09.28L8.06,16.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L17,10.81a.32.32,0,0,1,.09-.28L21,6.79,15.64,6a.32.32,0,0,1-.24-.17L13,1,10.61,5.85a.32.32,0,0,1-.24.17Z' fill='%23fff'/%3E%3Cpath d='M5.64,18a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L2.1,7.8A.32.32,0,0,1,2,7.47a.32.32,0,0,1,.26-.22L8.1,6.41l2.61-5.24A.32.32,0,0,1,11,1h0a.32.32,0,0,1,.29.18L13.9,6.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L11,15.25,5.79,18A.33.33,0,0,1,5.64,18Z' fill='%23CB333B'/%3E%3Cpath d='M3,7.79l3.87,3.74a.32.32,0,0,1,.09.28L6.06,17.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L15,11.81a.32.32,0,0,1,.09-.28L19,7.79,13.64,7a.32.32,0,0,1-.24-.17L11,2,8.61,6.85A.32.32,0,0,1,8.36,7Z' fill='%23fff'/%3E%3Cpath d='M18,8.47a.32.32,0,0,0-.26-.22L11.9,7.41,9.29,2.18a.32.32,0,0,0-.58,0L6.1,7.41.28,8.25A.32.32,0,0,0,0,8.47.32.32,0,0,0,.1,8.8l4.22,4.07-1,5.75a.32.32,0,0,0,.47.34L9,16.25,14.21,19a.32.32,0,0,0,.34,0,.32.32,0,0,0,.13-.31l-1-5.75L17.9,8.8A.32.32,0,0,0,18,8.47Z' fill='%23CB333B'/%3E%3Cpath d='M21.15,11.78,23,5.16l.76-.07.78,3.2a14.83,14.83,0,0,1,.36,2.07h0c.18-.88.38-1.68.67-2.72l.76-2.77L27,4.79l-1.82,6.63-.7.06-.77-3.21a15.25,15.25,0,0,1-.38-2.12h0c-.19.83-.4,1.63-.7,2.73l-.78,2.83Z' fill='%23fff'/%3E%3Cpath d='M30,8l-2.06.19-.65,2.39,2.31-.21-.2.72-3,.27,1.82-6.63L31,4.42l-.2.72-2.19.2-.57,2.09,2.06-.19Z' fill='%23fff'/%3E%3Cpath d='M31.19,10.87l.46-6.5.73-.07-.29,3.3c-.07.81-.15,1.62-.23,2.25h0c.27-.67.65-1.47,1.06-2.34l1.63-3.41L35.29,4,35,7.34c-.07.77-.14,1.55-.25,2.24h0c.31-.74.66-1.49,1.05-2.33l1.62-3.41.7-.06-3.32,6.76-.72.07.27-3.39c.07-.83.13-1.47.24-2.13h0c-.27.67-.57,1.33-1,2.2l-1.7,3.52Z' fill='%23fff'/%3E%3C/svg%3E") left / contain no-repeat;
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-list .je-carousel-item .hosters-carousel--rating {
   display: flex;
@@ -1163,7 +1160,7 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 35;
+  z-index: 99999;
   display: none;
   width: 100%;
   height: 100%;
@@ -1377,8 +1374,9 @@ input {
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid input {
   display: none;
 }
-.signup_form_modal .modal-dialog .modal-content form .hosters-grid input:checked + label {
-  border-color: #01bea7;
+.signup_form_modal .modal-dialog .modal-content form .hosters-grid input:checked + label,
+.signup_form_modal .modal-dialog .modal-content form .hosters-grid input:hover + label {
+  border-color: #CB333B;
 }
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid label {
   padding: 0 30px 25px;
@@ -1390,7 +1388,7 @@ input {
   height: 120px;
 }
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid label:hover .show-info {
-  background: linear-gradient(to right, #00b2b7 0%, #00cda7 100%);
+  background: #CB333B;
 }
 .signup_form_modal .modal-dialog .modal-content form .hosters-grid .hoster-regions {
   width: 100%;
@@ -1447,9 +1445,9 @@ input {
   color: #fff;
   text-transform: uppercase;
   font-size: 16px;
-  background: linear-gradient(to right, #019ea3 0%, #00cda7 100%);
+  background: #CB333B;
   padding: 0 45px;
-  border-radius: 30px;
+  border-radius: 4px;
   opacity: 1;
   display: block;
   margin: 0 auto;
@@ -1457,7 +1455,7 @@ input {
   cursor: pointer;
 }
 .signup_form_modal .modal-dialog .modal-content form input.jlc-form--submit:hover {
-  background: linear-gradient(90deg, #00cda7, #019ea3);
+  background: #9B2637;
 }
 .signup_form_modal .modal-dialog .modal-content form input.jlc-form--submit.submit-disabled {
   opacity: 0.5;
@@ -1496,7 +1494,7 @@ input {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 40;
+  z-index: 999999;
   display: none;
   width: 100%;
   height: 100%;
@@ -1545,7 +1543,7 @@ input {
 }
 #hoster-data .jlc-modal--title {
   padding-bottom: 20px;
-  color: #00acff;
+  color: #CB333B;
   font-size: 24px;
   line-height: 24px;
   font-family: 'Open Sans', sans-serif;
@@ -1589,7 +1587,7 @@ input {
   transform: rotate(-45deg);
 }
 #hoster-data i.ico.ico--new {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='625936d2-c6ff-44b7-a38f-0fc749a72c2d' data-name='Слой 1' width='48' height='19' viewBox='0 0 48 19'%3E%3Ctitle%3Enew star%3C/title%3E%3Cpath d='M12,4.68a54.49,54.49,0,0,1,17-3c9,0,19,6,19,6s-3,1-4,2-1,2-7,2-16,4-18,5-7-6-7-8Z' fill='%23ffb400'/%3E%3Cpath d='M7.64,17a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L4.1,6.8A.32.32,0,0,1,4,6.47a.32.32,0,0,1,.26-.22l5.83-.84L12.71.18A.32.32,0,0,1,13,0h0a.32.32,0,0,1,.29.18L15.9,5.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L13,14.25,7.79,17A.33.33,0,0,1,7.64,17Z' fill='%23ffb200'/%3E%3Cpath d='M5,6.79l3.87,3.74a.32.32,0,0,1,.09.28L8.06,16.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L17,10.81a.32.32,0,0,1,.09-.28L21,6.79,15.64,6a.32.32,0,0,1-.24-.17L13,1,10.61,5.85a.32.32,0,0,1-.24.17Z' fill='%23fff'/%3E%3Cpath d='M5.64,18a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L2.1,7.8A.32.32,0,0,1,2,7.47a.32.32,0,0,1,.26-.22L8.1,6.41l2.61-5.24A.32.32,0,0,1,11,1h0a.32.32,0,0,1,.29.18L13.9,6.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L11,15.25,5.79,18A.33.33,0,0,1,5.64,18Z' fill='%23fc0'/%3E%3Cpath d='M3,7.79l3.87,3.74a.32.32,0,0,1,.09.28L6.06,17.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L15,11.81a.32.32,0,0,1,.09-.28L19,7.79,13.64,7a.32.32,0,0,1-.24-.17L11,2,8.61,6.85A.32.32,0,0,1,8.36,7Z' fill='%23fff'/%3E%3Cpath d='M18,8.47a.32.32,0,0,0-.26-.22L11.9,7.41,9.29,2.18a.32.32,0,0,0-.58,0L6.1,7.41.28,8.25A.32.32,0,0,0,0,8.47.32.32,0,0,0,.1,8.8l4.22,4.07-1,5.75a.32.32,0,0,0,.47.34L9,16.25,14.21,19a.32.32,0,0,0,.34,0,.32.32,0,0,0,.13-.31l-1-5.75L17.9,8.8A.32.32,0,0,0,18,8.47Z' fill='%23fc0'/%3E%3Cpath d='M21.15,11.78,23,5.16l.76-.07.78,3.2a14.83,14.83,0,0,1,.36,2.07h0c.18-.88.38-1.68.67-2.72l.76-2.77L27,4.79l-1.82,6.63-.7.06-.77-3.21a15.25,15.25,0,0,1-.38-2.12h0c-.19.83-.4,1.63-.7,2.73l-.78,2.83Z' fill='%23fff'/%3E%3Cpath d='M30,8l-2.06.19-.65,2.39,2.31-.21-.2.72-3,.27,1.82-6.63L31,4.42l-.2.72-2.19.2-.57,2.09,2.06-.19Z' fill='%23fff'/%3E%3Cpath d='M31.19,10.87l.46-6.5.73-.07-.29,3.3c-.07.81-.15,1.62-.23,2.25h0c.27-.67.65-1.47,1.06-2.34l1.63-3.41L35.29,4,35,7.34c-.07.77-.14,1.55-.25,2.24h0c.31-.74.66-1.49,1.05-2.33l1.62-3.41.7-.06-3.32,6.76-.72.07.27-3.39c.07-.83.13-1.47.24-2.13h0c-.27.67-.57,1.33-1,2.2l-1.7,3.52Z' fill='%23fff'/%3E%3C/svg%3E") left / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' id='625936d2-c6ff-44b7-a38f-0fc749a72c2d' data-name='%D0%A1%D0%BB%D0%BE%D0%B9 1' width='48' height='19' viewBox='0 0 48 19'%3E%3Ctitle%3Enew star%3C/title%3E%3Cpath d='M12,4.68a54.49,54.49,0,0,1,17-3c9,0,19,6,19,6s-3,1-4,2-1,2-7,2-16,4-18,5-7-6-7-8Z' fill='%23CB333B'/%3E%3Cpath d='M7.64,17a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L4.1,6.8A.32.32,0,0,1,4,6.47a.32.32,0,0,1,.26-.22l5.83-.84L12.71.18A.32.32,0,0,1,13,0h0a.32.32,0,0,1,.29.18L15.9,5.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L13,14.25,7.79,17A.33.33,0,0,1,7.64,17Z' fill='%23CB333B'/%3E%3Cpath d='M5,6.79l3.87,3.74a.32.32,0,0,1,.09.28L8.06,16.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L17,10.81a.32.32,0,0,1,.09-.28L21,6.79,15.64,6a.32.32,0,0,1-.24-.17L13,1,10.61,5.85a.32.32,0,0,1-.24.17Z' fill='%23fff'/%3E%3Cpath d='M5.64,18a.32.32,0,0,1-.19-.06.32.32,0,0,1-.13-.31l1-5.75L2.1,7.8A.32.32,0,0,1,2,7.47a.32.32,0,0,1,.26-.22L8.1,6.41l2.61-5.24A.32.32,0,0,1,11,1h0a.32.32,0,0,1,.29.18L13.9,6.41l5.83.84a.32.32,0,0,1,.26.22.32.32,0,0,1-.08.33l-4.22,4.08,1,5.75a.32.32,0,0,1-.13.31.32.32,0,0,1-.34,0L11,15.25,5.79,18A.33.33,0,0,1,5.64,18Z' fill='%23CB333B'/%3E%3Cpath d='M3,7.79l3.87,3.74a.32.32,0,0,1,.09.28L6.06,17.1l4.79-2.49a.32.32,0,0,1,.3,0l4.79,2.49L15,11.81a.32.32,0,0,1,.09-.28L19,7.79,13.64,7a.32.32,0,0,1-.24-.17L11,2,8.61,6.85A.32.32,0,0,1,8.36,7Z' fill='%23fff'/%3E%3Cpath d='M18,8.47a.32.32,0,0,0-.26-.22L11.9,7.41,9.29,2.18a.32.32,0,0,0-.58,0L6.1,7.41.28,8.25A.32.32,0,0,0,0,8.47.32.32,0,0,0,.1,8.8l4.22,4.07-1,5.75a.32.32,0,0,0,.47.34L9,16.25,14.21,19a.32.32,0,0,0,.34,0,.32.32,0,0,0,.13-.31l-1-5.75L17.9,8.8A.32.32,0,0,0,18,8.47Z' fill='%23CB333B'/%3E%3Cpath d='M21.15,11.78,23,5.16l.76-.07.78,3.2a14.83,14.83,0,0,1,.36,2.07h0c.18-.88.38-1.68.67-2.72l.76-2.77L27,4.79l-1.82,6.63-.7.06-.77-3.21a15.25,15.25,0,0,1-.38-2.12h0c-.19.83-.4,1.63-.7,2.73l-.78,2.83Z' fill='%23fff'/%3E%3Cpath d='M30,8l-2.06.19-.65,2.39,2.31-.21-.2.72-3,.27,1.82-6.63L31,4.42l-.2.72-2.19.2-.57,2.09,2.06-.19Z' fill='%23fff'/%3E%3Cpath d='M31.19,10.87l.46-6.5.73-.07-.29,3.3c-.07.81-.15,1.62-.23,2.25h0c.27-.67.65-1.47,1.06-2.34l1.63-3.41L35.29,4,35,7.34c-.07.77-.14,1.55-.25,2.24h0c.31-.74.66-1.49,1.05-2.33l1.62-3.41.7-.06-3.32,6.76-.72.07.27-3.39c.07-.83.13-1.47.24-2.13h0c-.27.67-.57,1.33-1,2.2l-1.7,3.52Z' fill='%23fff'/%3E%3C/svg%3E") left / contain no-repeat;
   display: block;
   width: 100%;
   height: 24px;
@@ -1599,8 +1597,7 @@ input {
   height: 23px;
   margin: 0 3px;
   display: inline-block;
-  background: url("data:image/svg+xml,%3Csvg id='addb128b-0553-4cce-b20d-585404887934' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star line%3C/title%3E%3Cpath d='M4.85,22.87a.43.43,0,0,1-.42-.5l1.33-7.74L.13,9.14a.43.43,0,0,1,.24-.73L8.14,7.28l3.48-7A.43.43,0,0,1,12,0h0a.43.43,0,0,1,.38.24l3.48,7,7.77,1.13a.43.43,0,0,1,.24.73l-5.62,5.48,1.33,7.74a.43.43,0,0,1-.62.45l-7-3.65L5,22.82A.43.43,0,0,1,4.85,22.87ZM1.35,9.14l5.16,5a.43.43,0,0,1,.12.38l-1.22,7.1L11.8,18.3a.43.43,0,0,1,.4,0l6.38,3.35-1.22-7.1a.43.43,0,0,1,.12-.38l5.16-5-7.13-1a.43.43,0,0,1-.32-.23L12,1.4,8.81,7.86a.43.43,0,0,1-.32.23Z' fill='%23c3d0d8'/%3E%3C/svg%3E") center no-repeat;
-  background-size: cover !important;
+  background: url("data:image/svg+xml,%3Csvg id='addb128b-0553-4cce-b20d-585404887934' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star line%3C/title%3E%3Cpath d='M4.85,22.87a.43.43,0,0,1-.42-.5l1.33-7.74L.13,9.14a.43.43,0,0,1,.24-.73L8.14,7.28l3.48-7A.43.43,0,0,1,12,0h0a.43.43,0,0,1,.38.24l3.48,7,7.77,1.13a.43.43,0,0,1,.24.73l-5.62,5.48,1.33,7.74a.43.43,0,0,1-.62.45l-7-3.65L5,22.82A.43.43,0,0,1,4.85,22.87ZM1.35,9.14l5.16,5a.43.43,0,0,1,.12.38l-1.22,7.1L11.8,18.3a.43.43,0,0,1,.4,0l6.38,3.35-1.22-7.1a.43.43,0,0,1,.12-.38l5.16-5-7.13-1a.43.43,0,0,1-.32-.23L12,1.4,8.81,7.86a.43.43,0,0,1-.32.23Z' fill='%23c3d0d8'/%3E%3C/svg%3E") center / cover no-repeat;
 }
 @media (max-width: 768px) {
   #hoster-data i.ico.ico--stars {
@@ -1609,10 +1606,10 @@ input {
   }
 }
 #hoster-data i.ico.ico--stars.filled {
-  background: url("data:image/svg+xml,%3Csvg id='2313b666-7570-4360-bba8-2ef0f73d3fe9' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star gold%3C/title%3E%3Cpath d='M24,8.7a.43.43,0,0,0-.35-.29L15.86,7.28l-3.48-7a.43.43,0,0,0-.77,0l-3.48,7L.37,8.41a.43.43,0,0,0-.24.73l5.62,5.48L4.43,22.37a.43.43,0,0,0,.17.42.43.43,0,0,0,.45,0l7-3.65,7,3.65a.43.43,0,0,0,.62-.45l-1.33-7.74,5.62-5.48A.43.43,0,0,0,24,8.7Z' fill='%23fc0'/%3E%3C/svg%3E") center no-repeat;
+  background: url("data:image/svg+xml,%3Csvg data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87'%3E%3Cpath d='M24 8.7a.43.43 0 00-.35-.29l-7.79-1.13-3.48-7a.43.43 0 00-.77 0l-3.48 7L.37 8.41a.43.43 0 00-.24.73l5.62 5.48-1.32 7.75a.43.43 0 00.17.42.43.43 0 00.45 0l7-3.65 7 3.65a.43.43 0 00.62-.45l-1.33-7.74 5.62-5.48A.43.43 0 0024 8.7z' fill='%2386A2ED'/%3E%3C/svg%3E") center / cover no-repeat;
 }
 #hoster-data i.ico.ico--stars.blue.filled {
-  background: url("data:image/svg+xml,%3Csvg id='97c9fcae-0459-41b1-ace9-3e081432b220' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star blue%3C/title%3E%3Cpath d='M24,8.7a.43.43,0,0,0-.35-.29L15.86,7.28l-3.48-7a.43.43,0,0,0-.77,0l-3.48,7L.37,8.41a.43.43,0,0,0-.24.73l5.62,5.48L4.43,22.37a.43.43,0,0,0,.17.42.43.43,0,0,0,.45,0l7-3.65,7,3.65a.43.43,0,0,0,.62-.45l-1.33-7.74,5.62-5.48A.43.43,0,0,0,24,8.7Z' fill='%2300acff'/%3E%3C/svg%3E") center no-repeat;
+  background: url("data:image/svg+xml,%3Csvg data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87'%3E%3Cpath d='M24 8.7a.43.43 0 00-.35-.29l-7.79-1.13-3.48-7a.43.43 0 00-.77 0l-3.48 7L.37 8.41a.43.43 0 00-.24.73l5.62 5.48-1.32 7.75a.43.43 0 00.17.42.43.43 0 00.45 0l7-3.65 7 3.65a.43.43 0 00.62-.45l-1.33-7.74 5.62-5.48A.43.43 0 0024 8.7z' fill='%2386A2ED'/%3E%3C/svg%3E") center / cover no-repeat;
 }
 @media (max-width: 576px) {
   #hoster-data .regions-row {
@@ -1641,7 +1638,7 @@ input {
 }
 #hoster-data .regions-row .right-part .location-rating {
   color: #fff;
-  background: url("data:image/svg+xml,%3Csvg id='97c9fcae-0459-41b1-ace9-3e081432b220' data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87' viewBox='0 0 24 22.87'%3E%3Ctitle%3Ebig star blue%3C/title%3E%3Cpath d='M24,8.7a.43.43,0,0,0-.35-.29L15.86,7.28l-3.48-7a.43.43,0,0,0-.77,0l-3.48,7L.37,8.41a.43.43,0,0,0-.24.73l5.62,5.48L4.43,22.37a.43.43,0,0,0,.17.42.43.43,0,0,0,.45,0l7-3.65,7,3.65a.43.43,0,0,0,.62-.45l-1.33-7.74,5.62-5.48A.43.43,0,0,0,24,8.7Z' fill='%2300acff'/%3E%3C/svg%3E") center no-repeat;
+  background: url("data:image/svg+xml,%3Csvg data-name='Слой 1' xmlns='http://www.w3.org/2000/svg' width='24' height='22.87'%3E%3Cpath d='M24 8.7a.43.43 0 00-.35-.29l-7.79-1.13-3.48-7a.43.43 0 00-.77 0l-3.48 7L.37 8.41a.43.43 0 00-.24.73l5.62 5.48-1.32 7.75a.43.43 0 00.17.42.43.43 0 00.45 0l7-3.65 7 3.65a.43.43 0 00.62-.45l-1.33-7.74 5.62-5.48A.43.43 0 0024 8.7z' fill='%2386A2ED'/%3E%3C/svg%3E") center / cover no-repeat;
   width: 24px;
   height: 23px;
   margin: 0 3px;
@@ -1678,7 +1675,11 @@ input {
   position: relative;
 }
 #hoster-data .hoster-details > .h-row a {
-  color: #00abff;
+  color: #CB333B;
+  transition: 0.3s;
+}
+#hoster-data .hoster-details > .h-row a:hover {
+  color: #9B2637;
 }
 @media (max-width: 576px) {
   #hoster-data .hoster-details > .h-row {

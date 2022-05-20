@@ -62,8 +62,8 @@
                     <div class="jlc-gdpr--checkbox">
                         <label>
                             <input type="checkbox">
-                        <span>I read and agree to <a href="https://jelastic.com/terms/">Jelastic Terms of Use </a>and <a
-                            href="https://jelastic.com/policy/">Privacy Policy</a><span data-error-target="1"><span
+                        <span>I read and agree to <a href="https://www.virtuozzo.com/legal/terms-and-conditions/" target="_blank">Virtuozzo Terms of Use </a>and <a
+                            href="https://www.virtuozzo.com/legal/privacy-policy/" target="_blank">Privacy Policy</a><span data-error-target="1"><span
                             class="gfield_required">*</span></span>
                         </span>
                         </label>
