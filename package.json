@@ -2,7 +2,7 @@
   "name": "marketplace",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "^1.4.1",
+    "grunt": "^1.5.2",
     "grunt-contrib-less": "^3.0.0",
     "grunt-contrib-uglify": "^5.0.1",
     "grunt-csso": "^2.2.4"
