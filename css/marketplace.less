@@ -164,7 +164,7 @@ input {
         align-items: flex-start;
         justify-content: flex-start;
         a {
-          box-shadow: 0 0 10px 0 rgb(0 0 0 / 15%);
+          box-shadow: 0px 5px 15px rgba(110, 121, 150, 0.1);
           padding: 18px 10px;
           line-height: 1;
           height: auto;
@@ -200,7 +200,6 @@ input {
     }
   }
   .marketplace-offers {
-    padding-right: 3px;
     text-align: center;
     position: relative;
     display: flex;
@@ -230,7 +229,7 @@ input {
     }
     .freewall-cell {
       width: 33.333567%;
-      padding: 13px;
+      padding: 8px;
       height: 240px;
       @media (max-width: 1024px) {
         width: 50%;
@@ -240,6 +239,8 @@ input {
       }
       @media (max-width: 600px) {
         width: 100%;
+        padding-left: 0;
+        padding-right: 0;
       }
       .marketplace-offer {
         width: 100%;
@@ -251,9 +252,9 @@ input {
         margin: 0 auto;
         border-radius: 15px;
         background-color: rgb(255, 255, 255);
-        box-shadow: 0 0 30px 0 rgba(0, 132, 245, 0.1);
+        box-shadow: 0px 5px 15px rgba(110, 121, 150, 0.1);
         &.details {
-          box-shadow: 0 0 30px 0 rgba(0, 132, 245, 0.2);
+          box-shadow: 0px 5px 15px rgba(110, 121, 150, 0.2);
           min-height: 100%;
           height: auto;
           z-index: 2;
