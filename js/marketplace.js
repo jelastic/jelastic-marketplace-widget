@@ -1043,7 +1043,7 @@ jQuery(document).ready(function ($) {
 
             var sMarketplaceAPI = JApp.marketplaceAPI;
 
-            me.perPage = 30;
+            me.perPage = 9;
 
             me.getCatsURL = function () {
                 return sMarketplaceAPI + "GetCategories";

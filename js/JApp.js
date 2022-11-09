@@ -86,7 +86,7 @@ window.JApp = (function (that) {
         },
 
         getHosters: function () {
-            return "https://jelastic.cloud/wp-json/jelastic/hosters/";
+            return "https://www.virtuozzo.com/application-platform-partners/wp-json/jelastic/hosters/";
         },
 
         getInstallAppURL: function () {

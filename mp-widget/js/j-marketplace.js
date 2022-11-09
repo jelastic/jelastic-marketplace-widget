@@ -4673,7 +4673,7 @@ window.JApp = function(that) {
             return "//platforms-info.jelastic.com/api/user/getcountry";
         },
         getHosters: function() {
-            return "https://jelastic.cloud/wp-json/jelastic/hosters/";
+            return "https://www.virtuozzo.com/application-platform-partners/wp-json/jelastic/hosters/";
         },
         getInstallAppURL: function() {
             return "//go.jelastic.com/InstallApp";
@@ -5746,7 +5746,7 @@ jQuery(document).ready(function($) {
         };
         JApp.marketplaceStore = function(me) {
             var sMarketplaceAPI = JApp.marketplaceAPI;
-            me.perPage = 30;
+            me.perPage = 9;
             me.getCatsURL = function() {
                 return sMarketplaceAPI + "GetCategories";
             };
