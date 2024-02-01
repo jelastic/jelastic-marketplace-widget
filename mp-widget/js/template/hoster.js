@@ -85,7 +85,7 @@
             </div>
             <div class="h-row">
                 <div class="left">
-                <a href="https://jelastic.cloud/details/<%= oHoster.keyword %>"
+                <a href="https://www.virtuozzo.com/application-platform-partners/<%= oHoster.keyword %>"
                 target="_blank">Read more</a>
                 </div>
             </div>

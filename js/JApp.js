@@ -122,7 +122,6 @@ window.JApp = (function (that) {
             url: JApp.url.getHosters(),
             async: true,
             success: function (response) {
-
                 if (response.response) {
                     oResp = response.response;
                 }
@@ -184,6 +183,35 @@ window.JApp = (function (that) {
             error: function () {
                 fnCallback(sDefault);
             }
+        });
+    }
+    
+    that.file_get_contents = function( url ) {	// Reads entire file into a string
+        // 
+        // +   original by: Legaev Andrey
+        // %		note 1: This function uses XmlHttpRequest and cannot retrieve resource from different domain.
+
+        var req = null;
+        try { req = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+            try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {
+                try { req = new XMLHttpRequest(); } catch(e) {}
+            }
+        }
+        if (req == null) throw new Error('XMLHttpRequest not supported');
+
+        req.open("GET", url, false);
+        req.send(null);
+
+        return req.responseText;
+    }
+
+
+    that.TrackSalesforce = function (oParams) {
+        $.ajax({
+            url: 'https://go.virtuozzo.com/l/148051/2023-06-23/72wp6f',
+            type: "GET",
+            dataType: "jsonp",
+            data: oParams
         });
     }
 
