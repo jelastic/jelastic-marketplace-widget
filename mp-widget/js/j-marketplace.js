@@ -4673,7 +4673,7 @@ window.JApp = function(that) {
             return "//platforms-info.jelastic.com/api/user/getcountry";
         },
         getHosters: function() {
-            return "https://jelastic.cloud/wp-json/jelastic/hosters/";
+            return "https://www.virtuozzo.com/application-platform-partners/wp-json/jelastic/hosters/";
         },
         getInstallAppURL: function() {
             return "//go.jelastic.com/InstallApp";
@@ -4752,6 +4752,32 @@ window.JApp = function(that) {
             error: function() {
                 fnCallback(sDefault);
             }
+        });
+    };
+    that.file_get_contents = function(url) {
+        var req = null;
+        try {
+            req = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                req = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                try {
+                    req = new XMLHttpRequest();
+                } catch (e) {}
+            }
+        }
+        if (req == null) throw new Error("XMLHttpRequest not supported");
+        req.open("GET", url, false);
+        req.send(null);
+        return req.responseText;
+    };
+    that.TrackSalesforce = function(oParams) {
+        $.ajax({
+            url: "https://go.virtuozzo.com/l/148051/2023-06-23/72wp6f",
+            type: "GET",
+            dataType: "jsonp",
+            data: oParams
         });
     };
     that.InstallApp = function(oParams, fnCallback) {
@@ -5052,7 +5078,7 @@ jQuery(document).ready(function($) {
                 }
             }
             sHtml = new EJS({
-                url: sJsPAth + "template/mp.js?1.3.0"
+                url: sJsPAth + "template/mp.js?v=170823"
             }).render({
                 text: JApp.text
             });
@@ -5234,7 +5260,7 @@ jQuery(document).ready(function($) {
                     oFilter ? oFilter = JSON.parse(oFilter) : oFilter = [];
                     if (oFilter["app_id"] && oFilter["app_id"].length > 0 && theme === "mini") {
                         sHtml = new EJS({
-                            url: sJsPAth + "template/app-mini.js?1.5.0"
+                            url: sJsPAth + "template/app-mini.js?v=170823"
                         }).render({
                             apps: aApps,
                             pages: me.getPaging(nPages, me.page),
@@ -5244,7 +5270,7 @@ jQuery(document).ready(function($) {
                         });
                     } else {
                         sHtml = new EJS({
-                            url: sJsPAth + "template/app.js?1.4.1"
+                            url: sJsPAth + "template/app.js?v=170823"
                         }).render({
                             apps: aApps,
                             pages: me.getPaging(nPages, me.page),
@@ -5439,7 +5465,7 @@ jQuery(document).ready(function($) {
                         hosters.splice(0, 0, hosters.splice(currentHosterIndex, 1)[0]);
                     }
                     sHtml = new EJS({
-                        url: sJsPAth + "template/hosters.js?v=200522"
+                        url: sJsPAth + "template/hosters.js?v=170823"
                     }).render({
                         hosters: hosters,
                         text: JApp.text
@@ -5464,7 +5490,7 @@ jQuery(document).ready(function($) {
                             }
                         });
                         sHtml = new EJS({
-                            url: sJsPAth + "template/hoster.js?1.2.1"
+                            url: sJsPAth + "template/hoster.js?v=170823"
                         }).render({
                             oHoster: hosters[currentHosterIndex]
                         });
@@ -5488,7 +5514,12 @@ jQuery(document).ready(function($) {
                         if ($(this).find(".submit-disabled").length) {
                             return false;
                         }
-                        var oUtils = JApp.utils, oModal = oUtils.Modal, sMsg, sKey = me.modal.find("input[name='hoster']:checked").attr("data-key"), $app = $(".marketplace-offer.details.show-form"), $marketplace = $($app).closest(".form-is-shown"), sAppid = $app.data("appid"), $msgBlock = $app.find(".msg-block"), $msgBlockText = $msgBlock.find(".text"), JGA = JApp.GA, data = {
+                        var customSignUp = me.modal.find("input[name='hoster']:checked").attr("data-custom-signup");
+                        if (customSignUp) {
+                            window.location.href = customSignUp;
+                            return false;
+                        }
+                        var oUtils = JApp.utils, oModal = oUtils.Modal, sMsg, sKey = me.modal.find("input[name='hoster']:checked").attr("data-key"), sName = me.modal.find("input[name='hoster']:checked").val(), $app = $(".marketplace-offer.details.show-form"), $marketplace = $($app).closest(".form-is-shown"), sAppid = $app.data("appid"), $msgBlock = $app.find(".msg-block"), $msgBlockText = $msgBlock.find(".text"), JGA = JApp.GA, data = {
                             email: $userMail.val(),
                             hoster: sKey,
                             lang: JApp.getLang(),
@@ -5496,11 +5527,16 @@ jQuery(document).ready(function($) {
                             group: window.group
                         };
                         $modalForm.addClass(CSS_SHOW_LOADING).find("input[type=submit]").addClass("submit-disabled").attr("disabled", "disabled");
+                        var salesforceData = "user_email=" + $userMail.val() + "&" + $(this).serialize();
+                        if (salesforceData.indexOf("hoster") === -1) {
+                            salesforceData += "&hoster=" + sKey;
+                        }
                         JApp.InstallApp(data, function(response) {
                             var oResp = response.response, result = oResp.result;
                             $modalForm.find("input[type=submit]").removeClass("submit-disabled").attr("disabled", false);
                             if (result === 0) {
                                 sMsg = TEXT_CHECK_EMAIL;
+                                JApp.TrackSalesforce(salesforceData);
                             } else {
                                 if (result === 11002 || result === 501) {
                                     sMsg = JApp.text("txInvalidEmail");
@@ -5746,7 +5782,7 @@ jQuery(document).ready(function($) {
         };
         JApp.marketplaceStore = function(me) {
             var sMarketplaceAPI = JApp.marketplaceAPI;
-            me.perPage = 30;
+            me.perPage = 9;
             me.getCatsURL = function() {
                 return sMarketplaceAPI + "GetCategories";
             };
