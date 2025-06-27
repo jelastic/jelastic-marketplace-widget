@@ -86,19 +86,15 @@ input {
   background: #ffffff;
   position: relative;
 }
-.marketplace .container {
-  padding-top: 50px !important;
-}
 .marketplace .marketplace-apps-cont {
   display: none;
 }
 .marketplace .marketplace-menu-wrap {
-  padding: 50px 0;
+  padding: 0 0 50px;
 }
 @media (max-width: 992px) {
   .marketplace .marketplace-menu-wrap {
     padding-bottom: 0;
-    padding-top: 35px;
   }
 }
 .marketplace .marketplace-menu-wrap .current-item {
@@ -212,10 +208,10 @@ input {
   padding-bottom: 50px;
 }
 .marketplace .marketplace-offers.has-hosterselect {
-  padding-bottom: 130px;
+  padding-bottom: 86px;
 }
 .marketplace .marketplace-offers.has-hosterselect .pagination-wrap {
-  bottom: 50px;
+  bottom: 0;
 }
 .marketplace .marketplace-offers .freewall-cell {
   width: 33.333567%;
@@ -461,7 +457,7 @@ input {
   top: 0;
   width: 50px;
   height: 100%;
-  background: #d0d0e0 url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center no-repeat;
+  background: #d0d0e0 url('../img/right-arrow.svg') center no-repeat;
   cursor: default;
   border-radius: 0 4px 4px 0;
   background-size: 17px;
@@ -471,7 +467,7 @@ input {
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.valid .arrow-go {
   cursor: pointer;
-  background: #CB333B url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center / 17px no-repeat;
+  background: #CB333B url('../img/right-arrow.svg') center / 17px no-repeat;
 }
 .marketplace .marketplace-offers .freewall-cell .marketplace-offer .install-panel.valid .arrow-go:hover {
   background-color: #9b2637;
@@ -728,7 +724,7 @@ input {
 .marketplace.mobile .marketplace-offers {
   width: 100%;
   margin: 20px 0 0;
-  padding-bottom: 127px;
+  padding-bottom: 76px;
 }
 /*==================================*/
 /*              Popover             */
@@ -1001,17 +997,17 @@ input {
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-arrow.slick-prev {
   left: 0;
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-prev.svg?v=a2e05203f9);
+  background-image: url(../img/arrow-prev.svg?v=a2e05203f9);
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-arrow.slick-prev:hover {
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-prev-hover.svg?v=4b82191c11);
+  background-image: url(../img/arrow-prev-hover.svg?v=4b82191c11);
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-arrow.slick-next {
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-next.svg?v=d6ff5ac480);
+  background-image: url(../img/arrow-next.svg?v=d6ff5ac480);
   right: 0;
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-arrow.slick-next:hover {
-  background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-next-hover.svg?v=87f17bec9e);
+  background-image: url(../img/arrow-next-hover.svg?v=87f17bec9e);
 }
 .jlc-modal-wrapper-owerview .jlc-wrapper--modal ul.je-carousel-list .slick-list {
   -webkit-user-select: none;
@@ -1168,14 +1164,9 @@ input {
   overflow: hidden;
   outline: 0;
   padding-right: 0 !important;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: #ffffff30;
-}
-@media (max-width: 576px) {
-  .signup_form_modal {
-    align-items: flex-start;
-  }
 }
 .signup_form_modal * {
   box-sizing: border-box;

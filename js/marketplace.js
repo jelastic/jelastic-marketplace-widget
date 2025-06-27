@@ -25,6 +25,8 @@ jQuery(document).ready(function ($) {
 
             JApp.setLocale($(marketplace).data());
 
+            sJsPAth = marketplace.getAttribute('data-base-url') || sJsPAth;
+
             var API = '//marketplace.jelastic.com/';
             if ($(marketplace).data('mpapi')) API = $(marketplace).data('mpapi');
             JApp.setAPI(API);
@@ -289,11 +291,11 @@ jQuery(document).ready(function ($) {
 
                             aApps.push(oApp);
                         });
-                        
+
                         theme = $marketplace.attr('data-theme');
                         oFilter = JApp.getFilter();
                         oFilter ? oFilter = JSON.parse(oFilter) : oFilter = [];
-                        
+
                         if ((oFilter['app_id']) && (oFilter['app_id'].length > 0) && (theme === 'mini')) {
 
                             sHtml = new EJS({url: sJsPAth + 'template/app-mini.js?v=170823'}).render({

@@ -99,18 +99,14 @@ input {
 .marketplace {
   background: #ffffff;
   position: relative;
-  .container {
-    padding-top: 50px !important;
-  }
   .marketplace-apps-cont {
     display: none;
   }
 
   .marketplace-menu-wrap {
-    padding: 50px 0;
+    padding: 0 0 50px;
     @media (max-width: 992px) {
       padding-bottom: 0;
-      padding-top: 35px;
     }
     .current-item {
       display: none;
@@ -222,9 +218,9 @@ input {
       padding-bottom: 50px;
     }
     &.has-hosterselect {
-      padding-bottom: 130px;
+      padding-bottom: 86px;
       .pagination-wrap {
-        bottom: 50px;
+        bottom: 0
       }
     }
     .freewall-cell {
@@ -453,7 +449,7 @@ input {
             top: 0;
             width: 50px;
             height: 100%;
-            background: #d0d0e0 url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center no-repeat;
+            background: #d0d0e0 url('../img/right-arrow.svg') center no-repeat;
             cursor: default;
             border-radius: 0 4px 4px 0;
             background-size: 17px;
@@ -464,7 +460,7 @@ input {
           &.valid {
             .arrow-go {
               cursor: pointer;
-              background: #CB333B url('//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/right-arrow.svg') center / 17px no-repeat;
+              background: #CB333B url('../img/right-arrow.svg') center / 17px no-repeat;
               &:hover {
                 background-color: #9b2637;
               }
@@ -743,7 +739,7 @@ input {
     .marketplace-offers {
       width: 100%;
       margin: 20px 0 0;
-      padding-bottom: 127px;
+      padding-bottom: 76px;
     }
   }
 }
@@ -1010,16 +1006,16 @@ input {
         outline: none;
         &.slick-prev {
           left: 0;
-          background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-prev.svg?v=a2e05203f9);
+          background-image: url(../img/arrow-prev.svg?v=a2e05203f9);
           &:hover {
-            background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-prev-hover.svg?v=4b82191c11);
+            background-image: url(../img/arrow-prev-hover.svg?v=4b82191c11);
           }
         }
         &.slick-next {
-          background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-next.svg?v=d6ff5ac480);
+          background-image: url(../img/arrow-next.svg?v=d6ff5ac480);
           right: 0;
           &:hover {
-            background-image: url(//jelastic.com/wp-content/themes/salient/img/components/component-signup-widget/arrow-next-hover.svg?v=87f17bec9e);
+            background-image: url(../img/arrow-next-hover.svg?v=87f17bec9e);
           }
         }
 
@@ -1180,12 +1176,9 @@ input {
   overflow: hidden;
   outline: 0;
   padding-right: 0 !important;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: #ffffff30;
-  @media (max-width: 576px) {
-    align-items: flex-start;
-  }
 
   * {
     box-sizing: border-box;
