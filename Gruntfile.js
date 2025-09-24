@@ -6,8 +6,8 @@ module.exports = function (grunt) {
         uglify: {
             scripts: {
                 options: {
-                    beautify: true,
-                    compress: false,
+                    beautify: false,
+                    compress: true,
                     mangle: false
                 },
                 files: {
