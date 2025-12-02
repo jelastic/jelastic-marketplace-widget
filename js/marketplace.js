@@ -32,7 +32,15 @@ jQuery(document).ready(function ($) {
             JApp.setAPI(API);
 
             window.hoster = false;
-            if ($(marketplace).data('key')) window.hoster = $(marketplace).data('key');
+            const rawKey = $(marketplace).data('key');
+            if (rawKey) {
+                // Превращаем строку в массив по запятой
+                const parts = rawKey.split(',')
+                    .map(s => s.trim())
+                    .filter(Boolean);
+
+                window.hoster = parts.length > 1 ? parts : parts[0];
+            }
 
             window.group = false;
             if ($(marketplace).data('group')) window.group = $(marketplace).data('group');
@@ -297,7 +305,6 @@ jQuery(document).ready(function ($) {
                         oFilter ? oFilter = JSON.parse(oFilter) : oFilter = [];
 
                         if ((oFilter['app_id']) && (oFilter['app_id'].length > 0) && (theme === 'mini')) {
-
                             sHtml = new EJS({url: sJsPAth + 'template/app-mini.js?v=170823'}).render({
                                 apps: aApps,
                                 pages: me.getPaging(nPages, me.page),
@@ -306,7 +313,6 @@ jQuery(document).ready(function ($) {
                                 hoster: window.hoster
                             });
                         } else {
-
                             sHtml = new EJS({url: sJsPAth + 'template/app.js?v=170823'}).render({
                                 apps: aApps,
                                 pages: me.getPaging(nPages, me.page),
@@ -316,15 +322,10 @@ jQuery(document).ready(function ($) {
                             });
                         }
 
-
                         $hosterSelect.appendTo($hosterSelectWrap);
-
                         $OfferCnt.html(sHtml);
-
                         $OfferCnt.toggleClass("has-pagging", nPages > 1);
-
                         $OfferCnt.find(SELECTOR_OFFER).mpOffer($hosterSelect);
-
                         $OfferCntWrap.find(".pagination a").click(function () {
 
                             var oLink = $(this),
@@ -371,15 +372,11 @@ jQuery(document).ready(function ($) {
                                         sLang = JApp.getLang();
 
                                     if (typeof oCat.title === "string") {
-
                                         sTitle = oCat.title;
                                     } else {
-
                                         if (oCat.title.hasOwnProperty(sLang)) {
-
                                             sTitle = oCat.title[sLang];
                                         } else {
-
                                             $.each(oCat.title, function (sLang, sValue) {
                                                 sTitle = sValue;
                                                 return false;
@@ -389,7 +386,6 @@ jQuery(document).ready(function ($) {
                                     }
 
                                     if (!EXPR_EXCLUDE_CAT.test(oCat.name)) {
-
                                         sCats += '<a class="menu-item ' + (oCat.highlighted ? "marked" : "") + '" href="#" data-filter="' + oCat.name + '">' + sTitle + '</a>';
                                     }
                                 });
@@ -414,8 +410,6 @@ jQuery(document).ready(function ($) {
                             urlParam = oCat.attr('data-filter').substring(oCat.attr('data-filter').lastIndexOf('/') + 1);
 
                             if (!oCat.hasClass(me.CLASS_ACTIVE)) {
-
-
                                 sCat === DEFAULT_CAT ? fnRemoveQString('filter') : fnInsertParam('filter', urlParam);
 
                                 $menuWrap.find("." + me.CLASS_ACTIVE).removeClass(me.CLASS_ACTIVE);
@@ -428,7 +422,6 @@ jQuery(document).ready(function ($) {
                                 }
 
                                 mobileMenuTrigger.text(oCat.text());
-
                                 me.toggleMenu(false);
                             }
 
@@ -452,11 +445,9 @@ jQuery(document).ready(function ($) {
                                 $menuWrap.addClass(CSS_OPEN_MOB_MENU);
                                 $menuCnt.slideDown(nSpeed, me.onResize);
                                 bOpenedMobileMenu = true;
-
                             } else if (bOpenedMobileMenu !== false) {
                                 $menuWrap.removeClass(CSS_OPEN_MOB_MENU);
                                 $menuCnt.css('display', 'none');
-
                                 bOpenedMobileMenu = false;
                             }
                             me.onResize();
@@ -470,7 +461,6 @@ jQuery(document).ready(function ($) {
                                 $menuCnt.show();
                                 bIsMobileMenu = false;
                             }
-
                         } else {
                             if (bIsMobileMenu !== true) {
                                 $marketplaceWrap.addClass(CSS_MOBILE_MENU);
@@ -515,28 +505,20 @@ jQuery(document).ready(function ($) {
                 load: function (oConfig) {
 
                     me.beforeLoad();
-
                     me = $.extend(me, oConfig);
-
                     if (!me.loaded && me.XHR) {
                         me.XHR.abort();
                     }
 
                     me.XHR = JApp.loadHosters(function (response) {
-
                         var oLoadedHosters = [];
-
                         $.each(response, function (index) {
                             if (this.keyword !== 'servint' && this.hasSignup === true) {
                                 oLoadedHosters.push(this);
                             }
                         });
-
                         me.render(oLoadedHosters);
                     });
-
-
-
 
                     setTimeout(function () {
                         var loadFilter = getParameterByName('filter'),
@@ -569,6 +551,10 @@ jQuery(document).ready(function ($) {
                 },
                 render: function (hosters) {
 
+                    if (Array.isArray(window.hoster)) {
+                        hosters = hosters.filter(p => window.hoster.includes(p.key));
+                    }
+
                     var currentHosterIndex = -1;
                     $.each(hosters, function (index, hoster) {
                         if (hoster.keyword === me.currentHoster) {
@@ -594,7 +580,6 @@ jQuery(document).ready(function ($) {
                         TEXT_CHECK_EMAIL = JApp.text("txSuccess").replace("\\nr\\", '<br>'),
                         CSS_SHOW_INSTALLED_MSG = 'show',
                         CSS_ERROR = 'error';
-
 
                     // check terms and privacy
                     $privacy.change(function () {
@@ -632,8 +617,6 @@ jQuery(document).ready(function ($) {
                                 $('#hoster-data').remove();
                             }, 500);
                         })
-
-
                     });
 
                     // modal form send
@@ -720,7 +703,6 @@ jQuery(document).ready(function ($) {
             return me;
         }());
 
-
         $.fn.mpOffer = function ($hostersSelect) {
             var oHoster = window.hoster,
                 bIsTouch = Modernizr.touch,
@@ -745,7 +727,7 @@ jQuery(document).ready(function ($) {
                     $btnInstall = me.find('.btn-install'),
                     $msgBlock = me.find('.msg-block'),
                     $msgBlockText = $msgBlock.find('.text'),
-                    $msgBlockСlose = $msgBlock.find('.close-details'),
+                    $msgBlockClose = $msgBlock.find('.close-details'),
                     $close_details = me.find('.close-details'),
                     $popoverCont = me.find('.markeplace-popover-cnt'),
                     $modal = $('.signup_form_modal'),
@@ -848,7 +830,6 @@ jQuery(document).ready(function ($) {
                 };
 
                 fnShowForm = function () {
-
                     bIsActive = true;
                     me.addClass(CSS_SHOW_FORM);
                     marketplace.addClass(CSS_OVERLAY);
@@ -935,7 +916,7 @@ jQuery(document).ready(function ($) {
                     }
                 });
 
-                $msgBlockСlose.click(function () {
+                $msgBlockClose.click(function () {
                     bIsActive = true;
                     bHoverBlocked = false;
 
@@ -945,7 +926,6 @@ jQuery(document).ready(function ($) {
                         $email.val('');
                         fnHideDetails(true);
                     }, 500);
-
 
                     return false;
                 });
@@ -975,15 +955,12 @@ jQuery(document).ready(function ($) {
                     if (oUtils.isValidEmail(data.email)) {
 
                         if ($form.hasClass('open-modal')) {
-
                             var bodyRect = document.body.getBoundingClientRect(),
                                 elemRect = this.getBoundingClientRect(),
                                 offset = elemRect.top - bodyRect.top,
                                 $modal_email = $('#user_email');
 
-
                             if (oUtils.isValidEmailStrong($modal_email.val())) {
-
                                 $('body').addClass('modal-open');
                                 $(this).closest('.marketplace-offer').addClass('loading');
                                 $modal.find('.jlc-wrapper--modal').css('top', $(this).closest('.marketplace-offer').offset().top);
@@ -1009,7 +986,6 @@ jQuery(document).ready(function ($) {
 
                                 if (result === 0) {
                                     sMsg = TEXT_CHECK_EMAIL;
-
                                 } else {
                                     if (result === 11002 || result === 501) {
                                         sMsg = JApp.text("txInvalidEmail");
@@ -1024,13 +1000,11 @@ jQuery(document).ready(function ($) {
 
                                 $msgBlockText.html(sMsg);
 
-
                                 $(me).removeClass(CSS_SHOW_DETAIL).removeClass(CSS_SHOW_FORM);
                                 marketplace.removeClass(CSS_OVERLAY);
                                 $msgBlock.addClass(CSS_SHOW_INSTALLED_MSG).css({opacity: 0, display: 'flex'}).animate({
                                     opacity: 1
                                 }, 1000);
-
 
                                 JGA.trackInstallApp(sAppid, result);
 
@@ -1093,7 +1067,6 @@ jQuery(document).ready(function ($) {
                                     en: 'Add-ons'
                                 }
                             };
-
                         }
 
                         if (fnCallback) {
@@ -1121,7 +1094,6 @@ jQuery(document).ready(function ($) {
                 }
                 var oFilter = JApp.getFilter();
 
-
                 if (oFilter) {
                     oFilter = JSON.parse(oFilter);
                     oSearchParams = Object.assign(oSearchParams, oFilter);
@@ -1144,14 +1116,11 @@ jQuery(document).ready(function ($) {
                     },
                     async: true,
                     success: function (response) {
-
-
                         var oResp = jQuery.parseJSON(response) || {};
 
                         if (oResp.result == 0 && oResp.response) {
                             oResp = oResp.response;
                         }
-
 
                         if (fnCallback) {
                             fnCallback(oResp);
@@ -1163,8 +1132,5 @@ jQuery(document).ready(function ($) {
             return me;
 
         }(JApp.marketplaceStore || {}));
-
     }());
-
-
 });

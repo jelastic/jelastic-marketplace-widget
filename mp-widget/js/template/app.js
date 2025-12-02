@@ -20,7 +20,7 @@
     <div class="description" data-content="<%= app.shortDescription %>">
     <%=cutDescr(app.shortDescription, 150)%>
         </div>
-        <form class="install-panel <%= hoster ? '' : ' open-modal' %>">
+        <form class="install-panel <%= (!hoster || Array.isArray(hoster)) ? 'open-modal' : '' %>">
         <a class="btn-install"><%=text("text")%></a>
         <input type="text" name="email" placeholder="<%=text("txEmailPlaceholder")%>" value=""/>
         <button type="submit" class="arrow-go"></button>
